@@ -128,3 +128,26 @@ code {
   border-radius: $border-radius;
   border-left: 4px solid $primary;
 }
+
+.responsive-image {
+  text-align: center;
+}
+
+.responsive-image img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Desktop screens */
+@media (min-width: 768px) {
+  .responsive-image img {
+    width: 50%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 767px) {
+  .responsive-image img {
+    width: 80%;
+  }
+}

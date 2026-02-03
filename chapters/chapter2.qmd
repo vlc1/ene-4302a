@@ -89,13 +89,49 @@ $$
 
 :::
 
-#### Simple harmonic oscillator
+#### Simple pendulum
 
-The simple harmonic oscillator is governed by the second-order differential equation:
+Another example of an IVP is the motion of a simple pendulum, which consists of a mass attached to a string swinging under the influence of gravity. If the friction is neglected, the total energy of the system is conserved, so one can derive a ordinary differential equation for the angle of displacement $\theta \left ( t \right )$ from the vertical position.
+
+The kinetic and potential energies of the pendulum are given by,
 $$
-\ddot{x} \left ( t \right ) + \omega ^ 2 x \left ( t \right ) = 0, \quad x \left ( 0 \right ) = x _ 0, \quad \dot{x} \left ( 0 \right ) = v _ 0,
+E _ k = \frac{1}{2} m R ^ 2 \dot \theta ^ 2, \quad \mathrm{and} \quad E _ p = -m g R \cos \theta,
 $$
-where $x \left ( t \right )$ is the displacement at time $t$, $\omega$ is the angular frequency, $x _ 0$ is the initial displacement, and $v _ 0$ is the initial velocity.
+respectively. Differentiating the total energy $E = E _ k + E _ p$ with respect to time and setting the derivative to zero (since energy is conserved) leads to,
+$$
+m R ^ 2 \dot \theta \left ( \ddot \theta + \frac{g}{R} \sin \theta \right ) = 0.
+$$
+The first solution ($\dot \theta = 0$) corresponds to the trivial case of a stationary pendulum, while the second solution gives the equation of motion,
+$$
+\ddot \theta + \omega ^ 2 \sin \theta = 0
+$$ {#eq-pendulum}
+where $\omega = \sqrt{g / R}$.
+
+::: {.responsive-image}
+![Simple pendulum (source: [Wikipedia](https://www.wikipedia.org/))](images/pendulum.gif){fig-align="center"}
+:::
+
+::: {.callout-note icon=false}
+
+@eq-pendulum is a **second-order** ordinary differential equation. In order to recover the canonical form (@eq-ivp), we introduce the state vector
+$$
+\underline q = \begin{bmatrix}
+\theta \\
+\dot \theta
+\end{bmatrix}
+$$
+leading to the system,
+$$
+\frac{\mathrm d}{\mathrm d t} \begin{bmatrix}
+q _ 1 \\
+q _ 2
+\end{bmatrix} = \begin{bmatrix}
+q _ 2 \\
+- \omega ^ 2 \sin q _ 1
+\end{bmatrix}.
+$$
+
+:::
 
 ## 2.2 Euler Methods
 
