@@ -12,9 +12,54 @@ This chapter covers numerical methods for solving initial value problems (IVPs) 
 - Implement explicit and implicit time integration schemes
 - Analyze stability and accuracy of numerical methods
 
-## Topics
-
 ### 2.1 Introduction to IVPs
+
+Initial value problems involve finding a function that satisfies a differential equation and meets specified initial conditions. The general form of an IVP is given by:
+$$
+\dot{\underline q} \left ( t \right ) = f \left ( t, \underline q \left ( t \right )\right ), \quad t > t _ 0,
+$$ {#eq-ivp}
+where,
+
+- $t$ is the independent variable (often time),
+- $\underline q$ is the dependent variable (state vector, e.g., position, velocity, etc.),
+
+  $\forall t \ge t _ 0$, $\underline q \left ( t \right ) \in \mathbb{R} ^ n$,
+
+- $f$ is a given function defining the system dynamics (model),
+
+  $\forall t \ge t _ 0$, $\underline q \in \mathbb R ^ n$, $f \left ( t, \underline q \right ) \in \mathbb{R} ^ n$.
+
+The definition of $q$ is completed by specifying the initial condition at time $t _ 0$:
+$$
+\underline q \left ( t _ 0 \right ) = \underline{q _ 0}.
+$$ {#eq-ic}
+
+<!--
+
+::: {.callout-note icon=false}
+#### Theorem (Cauchy–Lipschitz / Picard–Lindelöf)
+
+Let $D \subseteq \mathbb R \times \mathbb R ^ n$ be a closed rectangle with $\left ( t _ 0, \underline{q _ 0} \right ) \in \operatorname{int} \left ( D \right )$, the interior of $D$. Let $f \colon D \to \mathbb R ^ n$ be a function that is **continuous** in $t$ and **Lipschitz continuous** in $\underline q$ (with Lipschitz constant independent from $t$). Then there exists some $\epsilon > 0$ such that the initial value problem (equations -@eq-ivp and -@eq-ic) admits a unique solution $\underline q \left ( t \right )$ on the interval $\left [ t _ 0 - \epsilon, t _ 0 + \epsilon \right ]$.
+:::
+
+-->
+
+::: {.callout-note icon=false}
+#### Global Cauchy–Lipschitz theorem
+
+Let $I = \left [ t _ a, t _ b \right ] \subset \mathbb R$ be a closed interval with $t _ 0 \in I$. Let $f : I \times \mathbb R ^ n \to \mathbb R ^ n$ satisfy:
+
+1. **Continuity in time and state:** $f$ is continuous on $I \times \mathbb R ^ n$.
+2. **Global Lipschitz in the state (uniform in time):** there exists $L > 0$ such that for all $t \in I$ and all $\underline{q _ 1}$, $\underline{q _ 2} \in \mathbb R ^ n$,
+$$
+\left \Vert f \left ( t, \underline{q _ 1} \right ) - f \left ( t, \underline{q _ 2} \right ) \right \Vert \le L \left \Vert \underline{q _ 1} - \underline{q _ 2} \right \Vert.
+$$
+
+Then the initial value problem (equations -@eq-ivp and -@eq-ic) admits a **unique solution** $\underline q \in \mathcal C ^ 1 \left (I; \mathbb R ^ n \right )$[^1] on the **whole interval** $I$.
+
+:::
+
+[^1]: Space of all functions once continuously differentiable on $I$.
 
 ### 2.2 Euler Methods
 
