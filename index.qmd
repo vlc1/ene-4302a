@@ -9,9 +9,9 @@ This course provides comprehensive coverage of computational methods for solving
 
 ## Course Information
 
-- **Instructor:** Vincent Le Chenadec
-- **Institution:** Gustave Eiffel University
-- **Prerequisites:** Ordinary Differential Equations, Partial Differential Equations
+- **Instructor:** [Vincent Le Chenadec](https://vlc1.github.io/)
+- **Institution:** [ESIEE Paris](https://www.esiee.fr/), [Gustave Eiffel University](https://www.univ-gustave-eiffel.fr/)
+- **Prerequisites:** Ordinary Differential Equations, Partial Differential Equations, Fluid Mechanics, Heat Transfer
 
 ## Topics Covered
 

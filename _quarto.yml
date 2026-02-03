@@ -7,17 +7,8 @@ website:
   site-url: https://vlc1.github.io/ene-4302a/
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-  sidebar:
-    style: "docked"
-    background: light
-    contents:
-      - href: index.qmd
-        text: Home
-      - section: "Chapters"
-        contents:
+      - text: "Chapters"
+        menu:
           - href: chapters/chapter1.qmd
             text: "1. Introduction"
           - href: chapters/chapter2.qmd
@@ -28,8 +19,8 @@ website:
             text: "4. Elliptic and Parabolic Problems"
           - href: chapters/chapter5.qmd
             text: "5. Numerical Solution of Algebraic Systems"
-      - section: "Problem Sets"
-        contents:
+      - text: "Problem Sets"
+        menu:
           - href: problem-sets/ps1.qmd
             text: "Problem Set 1"
   page-footer:
