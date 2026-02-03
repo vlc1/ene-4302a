@@ -1,0 +1,15 @@
+---
+title: "Chapters"
+---
+
+## Overview
+
+This section contains all course chapters covering numerical methods for energy, thermal, and fluid engineering.
+
+## Available chapters
+
+- [Chapter 1: Introduction](chapter1.qmd)
+- [Chapter 2: Initial Value Problems](chapter2.qmd)
+- [Chapter 3: Boundary Value Problems](chapter3.qmd)
+- [Chapter 4: Elliptic and Parabolic Problems](chapter4.qmd)
+- [Chapter 5: Numerical Solution of Algebraic Systems](chapter5.qmd)

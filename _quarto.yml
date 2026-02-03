@@ -18,15 +18,17 @@ website:
         contents:
           - href: index.qmd
             text: Home
-          - href: chapter1.qmd
+          - href: chapters/index.qmd
+            text: Chapters
+          - href: chapters/chapter1.qmd
             text: "1. Introduction"
-          - href: chapter2.qmd
+          - href: chapters/chapter2.qmd
             text: "2. Initial Value Problems"
-          - href: chapter3.qmd
+          - href: chapters/chapter3.qmd
             text: "3. Boundary Value Problems"
-          - href: chapter4.qmd
+          - href: chapters/chapter4.qmd
             text: "4. Elliptic and Parabolic Problems"
-          - href: chapter5.qmd
+          - href: chapters/chapter5.qmd
             text: "5. Numerical Solution of Algebraic Systems"
       - section: "Problem Sets"
         contents:
