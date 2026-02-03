@@ -2,22 +2,160 @@
 title: "Chapter 1: Introduction"
 ---
 
-## Overview
+## What are numerical methods?
 
-This chapter introduces the fundamental concepts of numerical methods for energy, thermal, and fluid engineering applications.
+Numerical methods approximate solutions to mathematical problems that are analytically intractable or prohibitively expensive to solve exactly. They translate mathematical models into algorithms that can be implemented on a computer to generate reliable, repeatable results. Numerical methods are widely used in engineering, physics, finance, and computer science to address differential equations, optimization, integration, and more.
 
-## Learning Objectives
+## Learning objectives
 
-- Understand the role of numerical methods in engineering
-- Review mathematical preliminaries
-- Introduction to computational tools and techniques
+- Identify when numerical methods are required and why.
+- Understand the sources of error and how they propagate.
+- Recognize the governing equations that motivate the numerical models used in this course.
 
-## Topics
+## Importance of numerical methods
 
-### 1.1 Motivation
+Numerical methods are important for several reasons:
 
-### 1.2 Numerical vs. Analytical Solutions
+1. **Handling complex problems**: Many real-world problems are too complex to solve analytically. Numerical methods provide a way to approximate solutions for these problems.
+2. **Computational efficiency**: Numerical methods can often provide faster solutions compared to analytical methods, especially for large-scale problems.
+3. **Flexibility**: They can be applied to a wide range of problems and can be adapted to different types of equations and boundary conditions.
+4. **Practical applications**: Numerical methods are essential in simulations, modeling, and data analysis in various scientific and engineering disciplines.
+5. **Error analysis**: They allow for the estimation and control of errors in approximations, which is crucial for ensuring the reliability of results.
 
-### 1.3 Error Analysis
+Overall, numerical methods are indispensable tools in modern science and engineering, enabling researchers and practitioners to tackle complex problems that would otherwise be intractable.
 
-### 1.4 Computational Considerations
+## Physical models
+
+We outline the physical models that motivate the numerical examples used throughout this course. We consider incompressible, viscous, and heat-conducting fluids.
+
+### Notation
+
+- Underlines indicate vectors,
+- Double underlines indicate second-order tensors.
+
+### 1.1.1 Continuity equation
+
+The conservation of mass is expressed by the continuity equation,
+$$
+\partial _ t \rho + \operatorname{div} \left ( \rho \underline v \right ) = 0,
+$$
+where $\rho$ denotes the mass density and $\underline v$ the velocity vector field.
+
+In the incompressible limit ($\rho = \text{constant}$), the continuity equation reduces to the solenoidal constraint,
+$$
+\operatorname{div} \underline v = 0.
+$$
+
+### 1.1.2 Navier-Stokes equations
+
+The linear momentum equation translates Newton's second law into a continuum mechanics framework,
+$$
+\partial _ t \left ( \rho \underline v \right ) + \operatorname{div} \left ( \rho \underline v \underline v \right ) = \operatorname{div} \underline{\underline{s}},
+$$
+where $\underline{\underline{s}}$ denotes the Cauchy stress tensor, which we decompose into an isotropic and a deviatoric part,
+$$
+\underline{\underline{s}} = -P \, \underline{\underline{\delta}} + \underline{\underline{s}} ^ \circ,
+$$
+where
+
+- $P$ is the mechanical pressure and $\underline{\underline{\delta}}$ is the second-order identity tensor,
+- $\underline{\underline{s}} ^ \circ$ is the deviatoric part of the stress tensor.
+
+Substituting into the momentum equation, we find,
+$$
+\partial _ t \left ( \rho \underline v \right ) + \operatorname{div} \left ( \rho \underline v \underline v \right ) + \operatorname{grad} P = \operatorname{div} \underline{\underline{s}} ^ \circ.
+$$
+
+It can be shown using the theory of linear non-equilibrium thermodynamics that the mechanical pressure is related to the thermodynamic pressure $p$ by,
+$$
+P = p - \eta \, \operatorname{div} \underline v.
+$$
+where $\eta \ge 0$ is the bulk viscosity coefficient. Likewise, the deviatoric part of the strain-rate tensor can be expressed as,
+$$
+\underline{\underline{s}} ^ \circ = 2 \mu \left [ \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} - \left ( \operatorname{div} \underline v \right ) \underline{\underline{\delta}} / d \right ]
+$$
+where $\mu$ is the dynamic viscosity and $d$ denotes the spatial dimension. Together, these relations define a Newtonian fluid.
+
+It is also usual to introduce the viscous stress tensor as the sum of the dynamic pressure and the deviatoric stress tensor,
+$$
+\underline{\underline{\tau}} \equiv 2 \mu \, \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} + \left ( \eta - 2 \mu / d \right ) \left ( \operatorname{div} \underline v \right ) \, \underline{\underline{\delta}}.
+$$
+The momentum equation can then be rewritten as,
+$$
+\partial _ t \left ( \rho \underline v \right ) + \operatorname{div} \left ( \rho \underline v \underline v \right ) + \operatorname{grad} p = \operatorname{div} \underline{\underline{\tau}}.
+$$
+
+### 1.1.3 Energy equation
+
+The conservation of total energy reads,
+$$
+\partial  _ t \left ( \rho \varepsilon \right ) + \operatorname{div} \left [ \left ( \rho \varepsilon + P \right ) \underline v \right ] = \operatorname{div} \left ( \underline v \cdot \underline{\underline{s}} ^ \circ - \underline q \right ),
+$$
+where $\varepsilon$ denotes the specific total energy and $\underline q$ the heat flux. If Fourier's law is applied, the conductive heat flux is given by,
+$$
+\underline q = -\kappa \, \operatorname{grad} T.
+$$
+
+An equation can also be derived for the internal contribution to the total energy by subtracting the kinetic energy equation and using the continuity equation. This yields,
+$$
+\partial  _ t \left ( \rho e \right ) + \operatorname{div} \left ( \rho e \underline v  + \underline q \right ) = -P \operatorname{div} \underline v + \underline{\underline{s}} ^ \circ : \operatorname{grad} \underline v
+$$
+where the last term may be rewritten,
+$$
+\underline{\underline{s}} ^ \circ : \operatorname{grad} \underline v = 2 \mu   \left [ \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} - \left ( \operatorname{div} \underline v \right ) \underline{\underline{\delta}} / d \right ] : \left [ \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} - \left ( \operatorname{div} \underline v \right ) \underline{\underline{\delta}} / d \right ]
+$$
+and is always non-negative. Likewise, the term,
+$$
+-P \operatorname{div} \underline v = -p \operatorname{div} \underline v + \eta \left ( \operatorname{div} \underline v \right ) ^ 2.
+$$
+Introducing the viscous dissipation term,
+$$
+\Phi \equiv \eta \left ( \operatorname{div} \underline v \right ) ^ 2 + 2 \mu   \left [ \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} - \left ( \operatorname{div} \underline v \right ) \underline{\underline{\delta}} / d \right ] : \left [ \left ( \operatorname{grad} \underline v \right ) _ {\operatorname{sym}} - \left ( \operatorname{div} \underline v \right ) \underline{\underline{\delta}} / d \right ]
+$$
+yields the following form of the internal energy equation,
+$$
+\partial  _ t \left ( \rho e \right ) + \operatorname{div} \left ( \rho e \underline v  + \underline q \right ) = \Phi - p \operatorname{div} \underline v
+$$ {#eq-internal}
+where $\Phi$ is always non-negative.
+
+### 1.1.4 Boundary conditions
+
+To close the system of equations, appropriate boundary conditions must be specified. For the velocity field, common boundary conditions include no-slip (velocity equal to zero at solid boundaries), free-slip (no normal velocity and no shear stress at the boundary), and inflow/outflow conditions.
+
+As far as the temperature field is concerned, common boundary conditions include prescribed temperature (Dirichlet condition), prescribed heat flux (Neumann condition), and convective heat transfer (Robin condition).
+
+## Model scalar transport equation
+
+The aforementioned systems of equations form a set of coupled, nonlinear partial differential equations, the solution of which is in general challenging both from the analytical and numerical viewpoints.
+
+To introduce and illustrate numerical methods, we will often resort to a simpler model equation that retains some of the characteristics of the full systems, while being easier to analyze and implement. A widely used model equation is the scalar transport equation, which can be derived from the internal energy equation (@eq-internal) by neglecting the viscous dissipation term and the pressure work term, and considering the following equation of state,
+$$
+\mathrm d _ t e = \rho c \, \mathrm d _ t T,
+$$
+where $\mathrm d _ t$ denotes the material derivative and $c$ is the specific heat capacity.
+
+Using Fourier's law with constant heat conductivity, the equation reduces to,
+$$
+\partial _ t T + \underline v \cdot \operatorname{grad} T = \alpha \, \Delta T + f,
+$$
+where $f$ denotes a volumetric source term and
+$$
+\alpha \equiv \frac{\kappa}{\rho c}
+$$
+the thermal diffusivity. This equation is known as the advection-diffusion equation, and combines both hyperbolic (advection) and parabolic (diffusion) characteristics. In this class, the advection term ($\underline v \cdot \operatorname{grad} T$) will not be considered. Instead, we will focus on conductive phenomena in a Cartesian coordinate system ($x$, $y$, and $z$). By the end of the class, you will be able to numerically solve the following equations.
+
+### 1.2.1 The heat equation
+
+In one spatial dimension, the heat equation reads,
+$$
+\partial _ t T = \alpha \, \partial _ {x x} T + f.
+$$
+
+### 1.2.2 The Poisson equation
+
+In steady-state conditions, the heat equation reduces to the Poisson equation,
+$$
+0 = \alpha \, \left ( \partial _ {xx} T + \partial _ {yy} T \right ) + f.
+$$
+(In two spatial dimensions.)
+
