@@ -1,0 +1,84 @@
+---
+title: "Problem Set 1"
+---
+
+## Topics
+
+- Initial value problems
+- Explicit and implicit time integration
+- Stability regions
+
+## P1.1 Forward Euler on a scalar IVP
+
+Consider the initial value problem
+\begin{cases}
+y' = -2y, \\
+y(0) = 1.
+\end{cases}
+
+1. Find the exact solution.
+2. Write the Forward Euler update formula with time step $\tau$.
+3. Compute approximations of $y(1)$ using $\tau = 0.5$, $0.25$ and $0.1$.
+4. Compare the numerical results with the exact solution.
+5. Comment on the observed convergence as $\tau$ decreases.
+
+## P1.2 Stability contrast: Forward vs Backward Euler
+
+Consider the IVP
+\begin{cases}
+y' = -50 y, \\
+y(0) = 1.
+\end{cases}
+
+1. Write the Forward Euler update formula.
+2. For which values of $\tau$ does the method remain stable?
+3. Write the Backward Euler update formula.
+4. Show that the method is unconditionally stable.
+5. Compute the numerical solution up to $t=1$ using $\tau = 0.1$ for both methods.
+6. Compare the results and comment on stability.
+
+## P1.3 Accuracy comparison: Euler vs Midpoint
+
+Consider the IVP
+\begin{cases}
+y'(t) = \sin(t) - y(t), \\
+y(0) = 1.
+\end{cases}
+
+1. Write the update formulas for:
+   - Forward Euler method
+   - Midpoint rule
+2. Compute the numerical solution on $[0,2]$ using $\tau = 0.2$.
+3. Plot the numerical solutions together with the exact solution.
+4. Rank the methods according to accuracy.
+5. Identify which methods are first-order and which are second-order accurate.
+
+## P1.4 Mechanical system
+
+A mass–spring–damper system is governed by
+$$
+m \ddot{x} + c \dot{x} + k x = 0,
+$$
+with parameters $m = 1$, $c = 0.2$, $k = 1$.
+
+1. Rewrite the second-order equation as a first-order system.
+2. Apply the following time-integration schemes:
+   - Forward Euler
+   - Backward Euler
+   - Midpoint rule
+
+   with initial conditions $x(0) = 1$, $x'(0) = 0$.
+3. Plot displacement and velocity versus time.
+4. Discuss how each numerical method affects the energy decay of the system.
+
+## P1.5 Nonlinear IVP
+
+Consider the nonlinear initial value problem
+\begin{cases}
+y' = y(1 - y), \\
+y(0) = 0.1.
+\end{cases}
+
+1. Apply the forward Euler method to the numerical solution of this problem.
+2. Consider applying the backward Euler method: what type of equation must be solved at each time step?
+

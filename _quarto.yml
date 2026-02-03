@@ -28,8 +28,12 @@ website:
             text: "4. Elliptic and Parabolic Problems"
           - href: chapter5.qmd
             text: "5. Numerical Solution of Algebraic Systems"
-          - href: about.qmd
-            text: About
+      - section: "Problem Sets"
+        contents:
+          - href: problem-sets/index.qmd
+            text: Overview
+          - href: problem-sets/ps1.qmd
+            text: "Problem Set 1"
   page-footer:
     left: "© 2026 Gustave Eiffel University. This work is licensed under [CC BY NC ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)"
     right: "Part of [Vincent Le Chenadec's courses](https://vlc1.github.io/courses/)"
