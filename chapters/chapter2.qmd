@@ -12,7 +12,9 @@ This chapter covers numerical methods for solving initial value problems (IVPs) 
 - Implement explicit and implicit time integration schemes
 - Analyze stability and accuracy of numerical methods
 
-### 2.1 Introduction to IVPs
+## Introduction to IVPs
+
+### 2.1 Definition
 
 Initial value problems involve finding a function that satisfies a differential equation and meets specified initial conditions. The general form of an IVP is given by:
 $$
@@ -45,7 +47,7 @@ Let $D \subseteq \mathbb R \times \mathbb R ^ n$ be a closed rectangle with $\le
 -->
 
 ::: {.callout-note icon=false}
-#### Global Cauchy–Lipschitz theorem
+### Global Cauchy–Lipschitz theorem
 
 Let $I = \left [ t _ a, t _ b \right ] \subset \mathbb R$ be a closed interval with $t _ 0 \in I$. Let $f : I \times \mathbb R ^ n \to \mathbb R ^ n$ satisfy:
 
@@ -61,10 +63,44 @@ Then the initial value problem (equations -@eq-ivp and -@eq-ic) admits a **uniqu
 
 [^1]: Space of all functions once continuously differentiable on $I$.
 
-### 2.2 Euler Methods
+### 2.2 Examples of IVPs
 
-### 2.3 Runge-Kutta Methods
+#### Radioactive decay
 
-### 2.4 Multi-step Methods
+A simple example of an IVP is the radioactive decay of a substance, described by the equation:
+$$
+\dot{N} \left ( t \right ) = -\lambda N \left ( t \right ), \quad N \left ( 0 \right ) = N _ 0,
+$$ {#eq-radioactive}
+where $N \left ( t \right )$ is the quantity of the substance at time $t$, $\lambda$ is the decay constant, and $N _ 0$ is the initial quantity.
 
-### 2.5 Stability Analysis
+This is one example of a scalar ($n = 1$) IVP. The analytical solution is given by:
+$$
+N \left ( t \right ) = \exp \left ( -\lambda t \right ) N _ 0.
+$$
+
+The decay constant may be related to the half-life $t _ {1 / 2}$ (the time required for half of the substance to decay) of the substance by the formula:
+$$
+t _ {1 / 2} = \frac{\ln \left ( 2 \right )}{\lambda}.
+$$
+
+::: {.callout-note icon=false}
+
+@eq-radioactive is a **first-order**, **linear**, **scalar**, **homogeneous** and **autonomous** IVP. It is a very valuable model that will be used throughout this course to illustrate the properties of numerical methods for IVPs.
+
+:::
+
+#### Simple harmonic oscillator
+
+The simple harmonic oscillator is governed by the second-order differential equation:
+$$
+\ddot{x} \left ( t \right ) + \omega ^ 2 x \left ( t \right ) = 0, \quad x \left ( 0 \right ) = x _ 0, \quad \dot{x} \left ( 0 \right ) = v _ 0,
+$$
+where $x \left ( t \right )$ is the displacement at time $t$, $\omega$ is the angular frequency, $x _ 0$ is the initial displacement, and $v _ 0$ is the initial velocity.
+
+## 2.2 Euler Methods
+
+## 2.3 Runge-Kutta Methods
+
+## 2.4 Multi-step Methods
+
+## 2.5 Stability Analysis
