@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Numerical Methods for Energy, Thermal, and Fluid Engineering"
+  site-url: https://vlc1.github.io/ene-4302a/
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+
