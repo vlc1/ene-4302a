@@ -10,6 +10,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  page-footer:
+    left: "© 2026 Gustave Eiffel University. This work is licensed under [CC BY NC ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)"
+    right: "Part of [Vincent Le Chenadec's courses](https://vlc1.github.io/courses/)"
 
 execute:
   freeze: auto
@@ -18,9 +21,12 @@ format:
   html:
     theme:
       - cosmo
-      - brand
+      - custom-theme.scss
     css: styles.css
     toc: true
+    page-layout: article
+    title-block-banner: false
+    anchor-sections: true
 
 
 

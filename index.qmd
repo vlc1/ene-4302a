@@ -1,7 +1,27 @@
 ---
-title: "ene-4302a"
+title: "Numerical Methods for Energy, Thermal, and Fluid Engineering"
+subtitle: "ENE-4302A"
 ---
 
-This is a Quarto website.
+## Course Overview
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This course provides comprehensive coverage of computational methods for solving heat transfer, fluid dynamics, and energy conversion problems. Students will learn to implement and apply numerical techniques for engineering analysis and design.
+
+## Course Information
+
+- **Instructor:** Vincent Le Chenadec
+- **Institution:** Gustave Eiffel University
+- **Prerequisites:** Ordinary Differential Equations, Partial Differential Equations
+
+## Topics Covered
+
+- Numerical methods for differential equations
+- Computational fluid dynamics fundamentals
+- Heat transfer simulation techniques
+- Energy system modeling
+- High-performance computing for engineering applications
+
+## Getting Started
+
+Navigate through the course materials using the menu above. All lecture notes, assignments, and resources are available through this website.
+

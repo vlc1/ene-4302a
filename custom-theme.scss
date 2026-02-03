@@ -1,0 +1,130 @@
+/*-- scss:defaults --*/
+
+// Import Google Font (Inter - matching HugoBlox sans font)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Typography - matching HugoBlox
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-size-base: 1rem !default;
+$headings-font-weight: 600 !default;
+
+// Color palette - matching HugoBlox default theme
+$primary: #3b82f6 !default;        // blue-500
+$secondary: #64748b !default;      // slate-500
+$light-gray: #f8fafc !default;     // slate-50
+$dark-gray: #1e293b !default;      // slate-800
+$text-color: #334155 !default;     // slate-700
+$link-color: $primary !default;
+
+// Layout - matching comfortable spacing
+$spacer: 1rem !default;
+$border-radius: 0.375rem !default;  // md radius
+
+// Navbar styling
+$navbar-bg: white !default;
+$navbar-fg: $text-color !default;
+$navbar-border-color: #e2e8f0 !default;
+
+/*-- scss:rules --*/
+
+// Body styling
+body {
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+  line-height: 1.7;
+}
+
+// Navbar
+.navbar {
+  background-color: $navbar-bg;
+  border-bottom: 1px solid $navbar-border-color;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  
+  .navbar-brand {
+    font-weight: 600;
+    color: $text-color;
+  }
+  
+  .navbar-nav .nav-link {
+    color: $text-color;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $headings-font-weight;
+  color: $dark-gray;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Cards and panels
+.card {
+  border-radius: $border-radius;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+// Code blocks
+pre {
+  border-radius: $border-radius;
+  background-color: $light-gray;
+}
+
+code {
+  color: #e11d48;
+  background-color: $light-gray;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+// Footer
+.nav-footer {
+  border-top: 1px solid $navbar-border-color;
+  padding: 2rem 0;
+  color: $secondary;
+  font-size: 0.875rem;
+}
+
+// Table of contents
+.sidebar nav[role="doc-toc"] ul {
+  padding-left: 0;
+  list-style: none;
+  
+  a {
+    color: $text-color;
+    font-size: 0.875rem;
+    
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+
+// Callouts
+.callout {
+  border-radius: $border-radius;
+  border-left: 4px solid $primary;
+}
