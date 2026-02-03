@@ -1,6 +1,7 @@
 ---
 title: "Numerical Methods for Energy, Thermal, and Fluid Engineering"
 subtitle: "ENE-4302A"
+title-block-banner: images/banner.jpg
 ---
 
 ## Course Overview
