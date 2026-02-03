@@ -1,0 +1,26 @@
+---
+title: "Chapter 3: Boundary Value Problems"
+---
+
+## Overview
+
+This chapter addresses numerical solution techniques for boundary value problems in ordinary differential equations.
+
+## Learning Objectives
+
+- Formulate boundary value problems
+- Apply shooting methods
+- Implement finite difference methods
+- Understand finite element basics
+
+## Topics
+
+### 3.1 Introduction to BVPs
+
+### 3.2 Shooting Methods
+
+### 3.3 Finite Difference Methods
+
+### 3.4 Collocation Methods
+
+### 3.5 Introduction to Finite Elements

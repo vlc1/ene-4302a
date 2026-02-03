@@ -1,0 +1,26 @@
+---
+title: "Chapter 5: Numerical Solution of Algebraic Systems"
+---
+
+## Overview
+
+This chapter covers methods for solving systems of linear and nonlinear algebraic equations arising from discretized PDEs.
+
+## Learning Objectives
+
+- Implement direct solution methods
+- Apply iterative solution techniques
+- Understand preconditioning strategies
+- Solve nonlinear systems
+
+## Topics
+
+### 5.1 Direct Methods (Gaussian Elimination, LU Decomposition)
+
+### 5.2 Iterative Methods (Jacobi, Gauss-Seidel, SOR)
+
+### 5.3 Krylov Subspace Methods
+
+### 5.4 Preconditioning Techniques
+
+### 5.5 Nonlinear Systems (Newton-Raphson)

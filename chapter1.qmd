@@ -1,0 +1,23 @@
+---
+title: "Chapter 1: Introduction"
+---
+
+## Overview
+
+This chapter introduces the fundamental concepts of numerical methods for energy, thermal, and fluid engineering applications.
+
+## Learning Objectives
+
+- Understand the role of numerical methods in engineering
+- Review mathematical preliminaries
+- Introduction to computational tools and techniques
+
+## Topics
+
+### 1.1 Motivation
+
+### 1.2 Numerical vs. Analytical Solutions
+
+### 1.3 Error Analysis
+
+### 1.4 Computational Considerations

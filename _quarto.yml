@@ -10,6 +10,26 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    style: "docked"
+    background: light
+    contents:
+      - section: "Course Structure"
+        contents:
+          - href: index.qmd
+            text: Home
+          - href: chapter1.qmd
+            text: "1. Introduction"
+          - href: chapter2.qmd
+            text: "2. Initial Value Problems"
+          - href: chapter3.qmd
+            text: "3. Boundary Value Problems"
+          - href: chapter4.qmd
+            text: "4. Elliptic and Parabolic Problems"
+          - href: chapter5.qmd
+            text: "5. Numerical Solution of Algebraic Systems"
+          - href: about.qmd
+            text: About
   page-footer:
     left: "© 2026 Gustave Eiffel University. This work is licensed under [CC BY NC ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)"
     right: "Part of [Vincent Le Chenadec's courses](https://vlc1.github.io/courses/)"

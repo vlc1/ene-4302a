@@ -1,0 +1,26 @@
+---
+title: "Chapter 4: Elliptic and Parabolic Problems"
+---
+
+## Overview
+
+This chapter focuses on numerical methods for elliptic and parabolic partial differential equations relevant to heat transfer and fluid flow.
+
+## Learning Objectives
+
+- Classify partial differential equations
+- Discretize elliptic and parabolic PDEs
+- Implement solution algorithms for heat transfer problems
+- Handle boundary conditions
+
+## Topics
+
+### 4.1 Classification of PDEs
+
+### 4.2 Elliptic Problems (Steady-State Heat Transfer)
+
+### 4.3 Parabolic Problems (Transient Heat Transfer)
+
+### 4.4 Finite Difference Discretization
+
+### 4.5 Stability and Convergence

@@ -1,0 +1,25 @@
+---
+title: "Chapter 2: Initial Value Problems"
+---
+
+## Overview
+
+This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations.
+
+## Learning Objectives
+
+- Understand the structure of initial value problems
+- Implement explicit and implicit time integration schemes
+- Analyze stability and accuracy of numerical methods
+
+## Topics
+
+### 2.1 Introduction to IVPs
+
+### 2.2 Euler Methods
+
+### 2.3 Runge-Kutta Methods
+
+### 2.4 Multi-step Methods
+
+### 2.5 Stability Analysis
