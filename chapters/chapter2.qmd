@@ -133,6 +133,37 @@ $$
 
 :::
 
+## 2.2 Simplest single-step methods
+
+In order to approximate the solution of an IVP numerically, we discretize the time domain into a series of time steps. Let $t _ 0$ be the initial time and $\tau$ be the time step size (assumed constant for simplicity, but can be variable in general). We define a sequence of discrete time points,
+$$
+t _ n = n \tau, \quad n \in \mathbb N.
+$$
+This is an arithmetic sequence where each time point is obtained by adding the time step size $\tau$ to the previous time point,
+$$
+t _ {n + 1} = t _ n + \tau.
+$$
+
+The underlying idea is to approximate the solution $\underline q \left ( t \right )$ at these discrete time points, denoted as $\underline{q _ n} \approx \underline q \left ( t _ n \right )$. Of course, the first value $\underline{q _ 0}$ is known from the initial condition -@eq-ic, and the goal is to devise a recurrence relation that relates the $n + 1$th term of the sequence ($\underline{q _ n}$) to some combination of a finite number of previous terms ($\underline{q _ n}$, $\underline{q _ {n - 1}$, ..., $q _ {n + 1 - k}$).
+
+In the context of IVPs, the number of previous terms used to compute the next term is referred to as the **number of steps**. It is traditional to distinguish between:
+
+- **Single-step methods** ($k = 1$): these methods compute the next value $\underline{q _ {n + 1}}$ using only the current value $\underline{q _ n}$. Examples include the Euler method and Runge-Kutta methods.
+- **Multi-step methods** ($k > 1$): these methods compute the next value $\underline{q _ {n + 1}}$ using multiple previous values, such as $\underline{q _ n}$, $\underline{q _ {n - 1}}$, etc. Examples include Adams-Bashforth and Adams-Moulton methods.
+
+::: {.callout-note icon=false title="Fibonacci sequence"}
+
+A famous example of a linear multi-step ($k = 2$) sequence with constant coefficients is the Fibonacci sequence, defined by the recurrence relation:
+$$
+F _ {n + 1} = F _ n + F _ {n - 1},
+$$
+and the initial conditions,
+$$
+F _ 0 = 0 \quad \mathrm{and} \quad F _ 1 = 1.
+$$
+
+:::
+
 ## 2.2 Euler Methods
 
 ## 2.3 Runge-Kutta Methods
