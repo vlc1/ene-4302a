@@ -36,16 +36,6 @@ $$
 \underline q \left ( t _ 0 \right ) = \underline{q _ 0}.
 $$ {#eq-ic}
 
-<!--
-
-::: {.callout-note icon=false}
-#### Theorem (Cauchy–Lipschitz / Picard–Lindelöf)
-
-Let $D \subseteq \mathbb R \times \mathbb R ^ n$ be a closed rectangle with $\left ( t _ 0, \underline{q _ 0} \right ) \in \operatorname{int} \left ( D \right )$, the interior of $D$. Let $f \colon D \to \mathbb R ^ n$ be a function that is **continuous** in $t$ and **Lipschitz continuous** in $\underline q$ (with Lipschitz constant independent from $t$). Then there exists some $\epsilon > 0$ such that the initial value problem (equations -@eq-ivp and -@eq-ic) admits a unique solution $\underline q \left ( t \right )$ on the interval $\left [ t _ 0 - \epsilon, t _ 0 + \epsilon \right ]$.
-:::
-
--->
-
 ::: {.callout-note icon=false}
 ### Global Cauchy–Lipschitz theorem
 
@@ -108,7 +98,7 @@ $$ {#eq-pendulum}
 where $\omega = \sqrt{g / R}$.
 
 ::: {.responsive-image}
-![Simple pendulum (source: [Wikipedia](https://www.wikipedia.org/))](images/pendulum.gif){fig-align="center"}
+![Simple pendulum (source: [Wikipedia](https://www.wikipedia.org/)).](images/pendulum.gif){fig-align="center"}
 :::
 
 ::: {.callout-note icon=false}
@@ -133,7 +123,24 @@ $$
 
 :::
 
-## 2.2 Simplest single-step methods
+#### Predator–prey model (Lotka–Volterra)
+
+The Lotka–Volterra equations are a pair of first-order, nonlinear, ordinary differential equations that describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. The equations are given by:
+$$
+\begin{aligned}
+\dot x & = \alpha x - \beta x y, \\
+\dot y & = \delta x y - \gamma y,
+\end{aligned}
+$$
+where $x \left ( t \right )$ and $y \left ( t \right )$ represent the population sizes of the prey and predator species at time $t$, respectively. The parameters $\alpha$, $\beta$, $\delta$, and $\gamma$ are positive constants that describe the interaction between the two species.
+
+The first equation models the growth of the prey population, which increases at a rate proportional to its current size ($\alpha x$) but decreases due to predation at a rate proportional to both the prey and predator populations ($\beta x y$). The second equation models the growth of the predator population, which increases at a rate proportional to the number of prey consumed ($\delta x y$) but decreases due to natural death at a rate proportional to its current size ($\gamma y$).
+
+::: {.responsive-image}
+![Population dynamics for rabbit and fox problem mentioned aside (source: [Wikipedia](https://www.wikipedia.org/)).](images/lotka-volterra.svg){fig-align="center"}
+:::
+
+## 2.2 Basic time integration schemes
 
 In order to approximate the solution of an IVP numerically, we discretize the time domain into a series of time steps. Let $t _ 0$ be the initial time and $\tau$ be the time step size (assumed constant for simplicity, but can be variable in general). We define a sequence of discrete time points,
 $$
@@ -144,7 +151,7 @@ $$
 t _ {n + 1} = t _ n + \tau.
 $$
 
-The underlying idea is to approximate the solution $\underline q \left ( t \right )$ at these discrete time points, denoted as $\underline{q _ n} \approx \underline q \left ( t _ n \right )$. Of course, the first value $\underline{q _ 0}$ is known from the initial condition -@eq-ic, and the goal is to devise a recurrence relation that relates the $n + 1$th term of the sequence ($\underline{q _ n}$) to some combination of a finite number of previous terms ($\underline{q _ n}$, $\underline{q _ {n - 1}$, ..., $q _ {n + 1 - k}$).
+The underlying idea is to approximate the solution $\underline q \left ( t \right )$ at these discrete time points, denoted as $\underline{q _ n} \approx \underline q \left ( t _ n \right )$. Of course, the first value $\underline{q _ 0}$ is known from the initial condition -@eq-ic, and the goal is to devise a recurrence relation that relates the $n + 1$th term of the sequence ($\underline{q _ n}$) to some combination of a finite number of previous terms ($\underline{q _ n}$, $\underline{q _ {n - 1}}$, ..., $\underline{q _ {n + 1 - k}}$).
 
 In the context of IVPs, the number of previous terms used to compute the next term is referred to as the **number of steps**. It is traditional to distinguish between:
 
