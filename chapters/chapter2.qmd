@@ -6,15 +6,15 @@ title: "Chapter 2: Initial Value Problems"
 
 This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations.
 
-## Learning Objectives
+## Learning objectives
 
 - Understand the structure of initial value problems
 - Implement explicit and implicit time integration schemes
 - Analyze stability and accuracy of numerical methods
 
-## Introduction to IVPs
+## 2.1 Introduction to IVPs
 
-### 2.1 Definition
+### 2.1.1 Definition
 
 Initial value problems involve finding a function that satisfies a differential equation and meets specified initial conditions. The general form of an IVP is given by:
 $$
@@ -53,7 +53,7 @@ Then the initial value problem (equations -@eq-ivp and -@eq-ic) admits a **uniqu
 
 [^1]: Space of all functions once continuously differentiable on $I$.
 
-### 2.2 Examples of IVPs
+### 2.1.2 Examples of IVPs
 
 #### Radioactive decay
 
@@ -140,7 +140,60 @@ The first equation models the growth of the prey population, which increases at 
 ![Population dynamics for rabbit and fox problem mentioned aside (source: [Wikipedia](https://www.wikipedia.org/)).](images/lotka-volterra.svg){fig-align="center"}
 :::
 
-## 2.2 Basic time integration schemes
+## 2.2 Numerical methods for IVPs
+
+### 2.2.1 Convergence of numerical methods {toc-title="Convergence"}
+
+An important question in the numerical analysis of IVPs is whether a given numerical method will produce an approximation that converges to the true solution as the time step size $\tau$ approaches zero.
+
+For linear initial value problems, convergence of a numerical scheme follows from consistency and stability. The Lax–Richtmyer equivalence theorem provides a rigorous proof of this statement in the finite-difference setting; analogous results hold for Runge–Kutta and other time-integration methods.
+
+Let us therefore consider the class of linear IVPs,
+$$
+\dot q = A \, q,
+$$ {#eq-lin-ivp}
+where $A \in \mathcal M _ n \left ( \mathbb R \right )$ is a constant matrix. This is a special case of the more general nonlinear IVPs given by @eq-ivp, where the function $f$ is linear in $q$ and does not depend on time.
+
+Let us also assume that the matrix $A$ is diagonalizable. Then it admits a spectral decomposition of the form,
+$$
+A = R \Lambda L,
+$$ {#eq-spec-dec}
+where the columns of $R$ are the right eigenvectors of $A$, the rows of $L$ are the left eigenvectors of $A$, and $\Lambda$ is a diagonal matrix containing the eigenvalues of $A$. The left and right eigenvectors are chosen such that they satisfy the biorthogonality condition,
+$$
+L R = I,
+$$
+where $I$ is the identity matrix.
+
+::: {.callout-note icon=false title="Diagonalizability"}
+
+A sufficient condition for a matrix to be diagonalizable is that it has $n$ distinct eigenvalues. However, this condition is not necessary, as there are matrices with repeated eigenvalues that are still diagonalizable. In general, a matrix is diagonalizable if the algebraic multiplicity of each eigenvalue equals its geometric multiplicity (the number of linearly independent eigenvectors associated with that eigenvalue).
+
+:::
+
+Substituting the spectral decomposition (@eq-spec-dec) into the linear IVP (@eq-lin-ivp) and left-multiplying by $L$ gives,
+$$
+\frac{\mathrm d}{\mathrm d t} \left ( L q \right ) = L A q = L R \Lambda L q = \Lambda \left ( L q \right ).
+$$
+By introducing the characteristic variable $w = L q$, we can rewrite the above equation as,
+$$
+\dot w = \Lambda w,
+$$
+or equivalently,
+$$
+\dot w _ i = \lambda _ i w _ i, \quad i = 1, \ldots, n.
+$$
+
+In other words, the original system of $n$ coupled ordinary differential equations has been decoupled into $n$ independent scalar ordinary differential equations, each of which can be solved separately.
+
+This motivates the study of the scalar IVP,
+$$
+\dot q = \lambda q,
+$$ {#eq-toy-ivp}
+already encountered in the context of the radioactive decay example. A small modification however is that $\lambda$ is now allowed to be a complex number, since the eigenvalues of a real matrix can be complex.
+
+The consistency and the stability of the numerical methods considered in the following sections will be analyzed by applying them to the scalar IVP given above, which we will hereafter refer to as the toy IVP. The results obtained for the toy IVP will then be used to infer the properties of the numerical methods when applied to the original IVP (@eq-ivp).
+
+### 2.2.2 Basic time integration schemes
 
 In order to approximate the solution of an IVP numerically, we discretize the time domain into a series of time steps. Let $t _ 0$ be the initial time and $\tau$ be the time step size (assumed constant for simplicity, but can be variable in general). We define a sequence of discrete time points,
 $$
