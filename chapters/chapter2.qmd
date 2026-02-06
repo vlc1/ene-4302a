@@ -142,11 +142,13 @@ The first equation models the growth of the prey population, which increases at 
 
 ## 2.2 Numerical methods for IVPs
 
-### 2.2.1 Convergence of numerical methods {toc-title="Convergence"}
-
 An important question in the numerical analysis of IVPs is whether a given numerical method will produce an approximation that converges to the true solution as the time step size $\tau$ approaches zero.
 
 For linear initial value problems, convergence of a numerical scheme follows from consistency and stability. The Lax–Richtmyer equivalence theorem provides a rigorous proof of this statement in the finite-difference setting; analogous results hold for Runge–Kutta and other time-integration methods.
+
+This section first introduces a simple model (referred to as a "toy model"), the form of which is first justified. Simple numerical schemes are then introduced. They are then applied to the numerical integration of the toy model. The consistency and stability of the resulting solution are then studied.
+
+### 2.2.1 A toy model
 
 Let us therefore consider the class of linear IVPs,
 $$
@@ -191,7 +193,15 @@ $$
 $$ {#eq-toy-ivp}
 already encountered in the context of the radioactive decay example. A small modification however is that $\lambda$ is now allowed to be a complex number, since the eigenvalues of a real matrix can be complex.
 
-The consistency and the stability of the numerical methods considered in the following sections will be analyzed by applying them to the scalar IVP given above, which we will hereafter refer to as the toy IVP. The results obtained for the toy IVP will then be used to infer the properties of the numerical methods when applied to the original IVP (@eq-ivp).
+The solution of this initial value problem is known,
+$$
+q \left ( t \right ) = \exp \left ( \lambda t \right ) q _ 0,
+$$
+which has the remarkable property,
+$$
+q \left ( t + \tau \right ) = \exp \left ( \lambda \tau \right ) q \left ( t \right ).
+$$ {#eq-geo-prop}
+This will be used in the following section.
 
 ### 2.2.2 Basic time integration schemes
 
@@ -204,7 +214,42 @@ $$
 t _ {n + 1} = t _ n + \tau.
 $$
 
-The underlying idea is to approximate the solution $\underline q \left ( t \right )$ at these discrete time points, denoted as $\underline{q _ n} \approx \underline q \left ( t _ n \right )$. Of course, the first value $\underline{q _ 0}$ is known from the initial condition -@eq-ic, and the goal is to devise a recurrence relation that relates the $n + 1$th term of the sequence ($\underline{q _ n}$) to some combination of a finite number of previous terms ($\underline{q _ n}$, $\underline{q _ {n - 1}}$, ..., $\underline{q _ {n + 1 - k}}$).
+The underlying idea is to approximate the solution $q \left ( t \right )$ at these discrete time points, denoted as $q _ n \approx q \left ( t _ n \right )$. Of course. This sequence is initialized using the initial condition, $q _ 0$ (@eq-ic). In fact, the property of the exact solution of the toy problem (@eq-geo-prop) can be written for $t = t _ n$,
+$$
+q \left ( t _ {n + 1} \right ) = \exp \left ( \lambda \tau \right ) q \left ( t _ n \right ),
+$$
+which shows that the exact solution sampled at constant rate $\tau$ forms a geometric sequence with common ratio,
+$$
+\sigma \left ( z \right ) \equiv \exp \left ( z \right ).
+$$
+
+The goal of a numerical method for IVPs is to produce a recurrence relation, akin to @eq-geo-prop, but for arbitrary models $f$ (i.e. not just the toy model). The starting point for this is the integration of the IVP (@eq-ivp) over a single time step $\left [ t _ n, t _ {n + 1} \right ]$,
+$$
+\int _ {t _ n} ^ {t _ {n + 1}} \dot q \left ( t \right ) \mathrm d t = \int _ {t _ n} ^ {t _ {n + 1}} f \left ( t, q \left ( t \right ) \right ) \mathrm d t,
+$$
+which yields the exact recurrence relation,
+$$
+q \left ( t _ {n + 1} \right ) = q \left ( t _ n \right ) + \int _ {t _ n} ^ {t _ {n + 1}} f \left ( t, q \left ( t \right ) \right ) \mathrm d t.
+$$
+
+```{julia}
+#| label: fig-comparison
+#| fig-cap: "Comparison of sine and cosine functions"
+#| fig-width: 8
+#| fig-height: 5
+#| echo: false
+#| warning: false
+
+using Plots
+plot(sin, 0, 2π, label="sin(x)", linewidth=2)
+```
+
+This relation is of little practical use, because the integral depends on the unknown solution $q \left ( t \right )$ for $t \in \left [ t _ n, t _ {n + 1} \right ]$. The idea is therefore to approximate the integral using some quadrature rule.
+
+
+
+
+, and the goal is to devise a recurrence relation that relates the $n + 1$th term of the sequence ($\underline{q _ n}$) to some combination of a finite number of previous terms ($\underline{q _ n}$, $\underline{q _ {n - 1}}$, ..., $\underline{q _ {n + 1 - k}}$).
 
 In the context of IVPs, the number of previous terms used to compute the next term is referred to as the **number of steps**. It is traditional to distinguish between:
 

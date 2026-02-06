@@ -30,6 +30,9 @@ website:
 execute:
   freeze: auto
 
+julia:
+  project: "."
+
 format:
   html:
     theme:

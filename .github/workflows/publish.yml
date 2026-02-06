@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     branches: main
 
@@ -8,12 +9,7 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -21,14 +17,40 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render site
-        uses: quarto-dev/quarto-actions/render@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Cache Quarto _freeze
+        uses: actions/cache@v4
         with:
-          path: '_site'
+          path: _freeze
+          key: ${{ runner.os }}-quarto-freeze-${{ hashFiles('**/*.qmd', '_quarto.yml', '**/Project.toml', '**/Manifest.toml', '**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-quarto-freeze-
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Python deps
+        run: pip install jupyter
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1'
+
+      - name: Cache Julia packages
+        uses: julia-actions/cache@v2
+
+      - name: Install Julia dependencies
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
+
+      - name: Install IJulia kernel
+        run: julia --project=. -e 'using IJulia; IJulia.installkernel("Julia", "--project=@.")'
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
