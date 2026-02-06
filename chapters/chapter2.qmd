@@ -244,6 +244,20 @@ using Plots
 plot(sin, 0, 2π, label="sin(x)", linewidth=2)
 ```
 
+::: {.responsive-image}
+```{julia}
+#| label: fig-comparison-bis
+#| fig-cap: "Comparison of sine and cosine functions"
+#| fig-width: 8
+#| fig-height: 5
+#| echo: false
+#| warning: false
+
+using Plots
+plot(sin, 0, 2π, label="sin(x)", linewidth=2)
+```
+:::
+
 This relation is of little practical use, because the integral depends on the unknown solution $q \left ( t \right )$ for $t \in \left [ t _ n, t _ {n + 1} \right ]$. The idea is therefore to approximate the integral using some quadrature rule.
 
 
