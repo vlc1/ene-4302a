@@ -7,3 +7,8 @@
   text-overflow: ellipsis;
   max-width: 100%;
 }
+
+/* Center figure captions */
+.centered-caption figcaption {
+  text-align: center;
+}
