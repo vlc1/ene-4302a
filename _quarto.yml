@@ -23,6 +23,8 @@ website:
         menu:
           - href: problem-sets/ps1.qmd
             text: "Problem Set 1"
+          - href: problem-sets/ps2.qmd
+            text: "Problem Set 2"
   page-footer:
     left: "© 2026 Gustave Eiffel University. This work is licensed under [CC BY NC ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)"
     right: "Part of [Vincent Le Chenadec's courses](https://vlc1.github.io/courses/)"

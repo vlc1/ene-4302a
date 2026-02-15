@@ -1,0 +1,177 @@
+---
+title: "Problem Set 2"
+---
+
+## P2.1 Logistic Equation
+
+The logistic equation models the growth of a population with intrinsic growth rate $\alpha > 0$ and carrying capacity $\kappa > 0$ (the limiting population as $t \to \infty$):
+$$
+\left \{
+\begin{aligned}
+\dot{y}(t) & = \alpha y(t)\left(1 - \frac{y(t)}{\kappa}\right), \quad t > 0, \\
+y(0) & = y_0.
+\end{aligned}
+\right.
+$$
+
+1. Show that the solution of this initial value problem is
+$$
+\forall t > 0, \quad
+y(t) = \frac{\kappa}{1 + \frac{\kappa - y_0}{y_0}\exp(-\alpha t)}.
+$$
+
+For the remainder of the exercise, take
+$\alpha = 1$, $\kappa = 2$, and $y_0 = 1$.
+
+2. Apply the **Forward Euler method** with time step $\tau = 0.1$.
+   Compute the numerical approximation up to $t = 0.3$.
+
+3. Compare the numerical approximation with the exact solution.
+   Reproduce and complete the table below.
+
+| $n$ | $t_n$ | $y(t_n)$ (exact) | $y_n$ (numerical) | $\lvert y_n - y(t_n) \rvert$ |
+|:---:|:-----:|:----------------:|:-----------------:|:----------------------------:|
+| $0$ | $0$   | $1$              | $1$               | $0$                          |
+| $1$ | $0.1$ |                  |                   |                              |
+| $2$ | $0.2$ |                  |                   |                              |
+| $3$ | $0.3$ |                  |                   |                              |
+
+: Expected format for reporting the results of the logistic equation exercise.
+
+## P2.2 Blasius Boundary Layer Problem
+
+The Blasius equation arises in boundary layer theory. It describes the steady, two-dimensional, incompressible laminar flow over a semi-infinite flat plate aligned with a uniform free stream.
+
+After similarity reduction of the Navier–Stokes equations, the problem reduces to the nonlinear boundary value problem:
+$$
+u'''(x) + u(x)\,u''(x) = 0,
+$$
+subject to the boundary conditions
+$$
+\left\{
+\begin{aligned}
+u(0) &= 0, \\
+u'(0) &= 0, \\
+u'(\infty) &= 1.
+\end{aligned}
+\right.
+$$
+
+1. What is the order of this ODE?
+   Rewrite it as a system of first-order ODEs.
+
+2. Show that the Blasius equation and the boundary conditions at $x=0$ are invariant under the scaling transformation ($c \neq 0$)
+$$
+\begin{aligned}
+\overline{u} &= c\,u, \\
+\overline{x} &= \frac{x}{c}.
+\end{aligned}
+$$
+
+Under this transformation, $\overline{u}$ satisfies the same differential equation as $u$, but the condition at infinity is replaced by
+$$
+\overline{u}''(0) = 1.
+$$
+
+Define
+$$
+\alpha = \overline{u}'(\infty).
+$$
+
+3. Show that choosing the scaling constant
+$$
+c = \sqrt{\alpha}
+$$
+leads to the normalization condition
+$$
+u'(\infty) = 1.
+$$
+
+4. Propose a numerical method to solve this boundary value problem.
+   (Indicate clearly how you would treat the condition at infinity.)
+
+## P2.3 Planar Three-Body Problem
+
+We consider three point masses $m _ i > 0$ moving in the plane, with positions $\underline{r _ i} \left ( t \right ) \in \mathbb R ^ 2$ and velocities $\underline{v _ i} \left ( t \right ) \in \mathbb R ^ 2$, for $i = 1$, $2$ and $3$. The only force is Newtonian gravity.
+
+This is a classical problem in celestial mechanics, and it is known that no closed-form solution exists for the general case. We will study a particular periodic solution, known as the figure-eight solution, which was discovered numerically by Moore in 1993 and later proved to exist by Chenciner and Montgomery in 2000.
+
+::: {.centered-caption}
+![Figure-eight orbit of the three-body problem (source: [Wikipedia](https://www.wikipedia.org/)).](assets/figure-8_orbit.gif)
+:::
+
+### Modeling
+
+1. Starting from Newton’s law $m _ i \underline{\ddot r _ i} = \underline{F _ i}$ and the gravitational interaction between pairs, show that
+   $$
+   \dot r_i = v_i,
+   \qquad
+   \dot v_i = \sum_{j\neq i} G m _ j \frac{\underline{r _ j} - \underline{r _ i}}{\left \Vert \underline{r _ j} - \underline{r _ i} \right \Vert ^ 3},
+   \qquad i = 1,2,3,
+   $$
+   where $G$ is the gravitational constant.
+
+2. Write the system as a first-order ODE $\dot q \left ( t \right ) = f \left ( t, q \left ( t \right ) \right )$ in $\mathbb R ^ {12}$ by defining
+   $$
+   y = \left ( \underline{r _ 1}, \underline{r _ 2}, \underline{r _ 3}, \underline{v _ 1}, \underline{v _ 2}, \underline{v _ 3} \right ).
+   $$
+   Give the explicit expression of $f \left ( t, q \left ( t \right ) \right )$.
+
+3. Show formally that the following quantities are invariants of the exact dynamics:
+
+   - Total linear momentum
+     $$
+     \underline P  = \sum _ i m_i \underline{v _ i}
+     $$
+   - Center of mass position
+     $$
+     \underline R = \frac{1}{M} \sum _ i m _ i \underline{r _ i} \quad \mathrm{with} \quad M = \sum _ i m _ i
+     $$
+   - Total energy
+     $$
+     E = \sum _ i \frac 1 2 m _ i \left \Vert \underline{v _ i} \right \Vert ^ 2 - \sum _ {i < j} \frac{G m _ i m _ j}{\left \Vert \underline{r _ i} - \underline{r _ j} \right \Vert}
+     $$
+
+### Numerical experiment (dimensionless units)
+
+To avoid very large/small physical constants, use the dimensionless choice $G = 1$ and take equal masses ($m _ 1 = m _ 2 = m _ 3 = 1$). The initial condition (a famous periodic solution of the three-body problem) in the plane:
+$$
+\begin{aligned}
+r _ 1(0) & = ( \;\;0.97000436,\; -0.24308753), \\
+r _ 2(0) & = (-0.97000436,\; \;\;0.24308753), \\
+r _ 3(0) & = (0,\;0),
+\end{aligned}
+$$
+and
+$$
+\begin{aligned}
+v _ 1(0) &= ( \;\;0.466203685,\; 0.432365730), \\
+v _ 2(0) &= ( \;\;0.466203685,\; 0.432365730), \\
+v _ 3(0) &= (-0.93240737,\; -0.86473146).
+\end{aligned}
+$$
+
+4. Verify from the initial data that:
+
+   - The center of mass is at the origin and remains there (at least at $t = 0$).
+   - The total linear momentum is zero at $t = 0$.
+
+5. Integrate the system over $t \in \left [ 0, T \right ]$ with $T = 10$ using a constant time step $\tau$ (try $\tau = 10 ^ {-2}$ and $\tau = 5 \times 10 ^ {-3}$).
+   Do this with:
+
+   - Forward Euler
+   - Runge-Kutta 2
+   - Midpoint rule
+
+6. For each method and each \(h\), compute and plot versus time:
+
+   - The energy error ($E \left ( t \right ) - E \left ( 0 \right )$)
+   - The momentum norm ($\left \Vert \underline P \left ( t \right ) \right \Vert$)
+   - The center of mass drift ($\left \Vert \underline R \left ( t \right ) \right \Vert$)
+
+7. Plot the planar trajectories of the three bodies and comment:
+
+   - Does the motion remain bounded?
+   - Do you observe a qualitative difference between methods?
+   - Which method best preserves invariants for a given step size?
+
