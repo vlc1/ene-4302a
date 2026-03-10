@@ -7,265 +7,6 @@
     "text": "About this site"
   },
   {
-    "objectID": "problem-sets/ps2.html",
-    "href": "problem-sets/ps2.html",
-    "title": "Problem Set 2",
-    "section": "",
-    "text": "The logistic equation models the growth of a population with intrinsic growth rate \\(\\alpha &gt; 0\\) and carrying capacity \\(\\kappa &gt; 0\\) (the limiting population as \\(t \\to \\infty\\)): \\[\n\\left \\{\n\\begin{aligned}\n\\dot{y}(t) & = \\alpha y(t)\\left(1 - \\frac{y(t)}{\\kappa}\\right), \\quad t &gt; 0, \\\\\ny(0) & = y_0.\n\\end{aligned}\n\\right.\n\\]\n\nShow that the solution of this initial value problem is \\[\n\\forall t &gt; 0, \\quad\ny(t) = \\frac{\\kappa}{1 + \\frac{\\kappa - y_0}{y_0}\\exp(-\\alpha t)}.\n\\]\n\nFor the remainder of the exercise, take \\(\\alpha = 1\\), \\(\\kappa = 2\\), and \\(y_0 = 1\\).\n\nApply the Forward Euler method with time step \\(\\tau = 0.1\\). Compute the numerical approximation up to \\(t = 0.3\\).\nCompare the numerical approximation with the exact solution. Reproduce and complete the table below.\n\n\nExpected format for reporting the results of the logistic equation exercise.\n\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(t_n\\)\n\\(y(t_n)\\) (exact)\n\\(y_n\\) (numerical)\n\\(\\lvert y_n - y(t_n) \\rvert\\)\n\n\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0.1\\)\n\n\n\n\n\n\\(2\\)\n\\(0.2\\)\n\n\n\n\n\n\\(3\\)\n\\(0.3\\)"
-  },
-  {
-    "objectID": "problem-sets/ps2.html#p2.1-logistic-equation",
-    "href": "problem-sets/ps2.html#p2.1-logistic-equation",
-    "title": "Problem Set 2",
-    "section": "",
-    "text": "The logistic equation models the growth of a population with intrinsic growth rate \\(\\alpha &gt; 0\\) and carrying capacity \\(\\kappa &gt; 0\\) (the limiting population as \\(t \\to \\infty\\)): \\[\n\\left \\{\n\\begin{aligned}\n\\dot{y}(t) & = \\alpha y(t)\\left(1 - \\frac{y(t)}{\\kappa}\\right), \\quad t &gt; 0, \\\\\ny(0) & = y_0.\n\\end{aligned}\n\\right.\n\\]\n\nShow that the solution of this initial value problem is \\[\n\\forall t &gt; 0, \\quad\ny(t) = \\frac{\\kappa}{1 + \\frac{\\kappa - y_0}{y_0}\\exp(-\\alpha t)}.\n\\]\n\nFor the remainder of the exercise, take \\(\\alpha = 1\\), \\(\\kappa = 2\\), and \\(y_0 = 1\\).\n\nApply the Forward Euler method with time step \\(\\tau = 0.1\\). Compute the numerical approximation up to \\(t = 0.3\\).\nCompare the numerical approximation with the exact solution. Reproduce and complete the table below.\n\n\nExpected format for reporting the results of the logistic equation exercise.\n\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(t_n\\)\n\\(y(t_n)\\) (exact)\n\\(y_n\\) (numerical)\n\\(\\lvert y_n - y(t_n) \\rvert\\)\n\n\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0.1\\)\n\n\n\n\n\n\\(2\\)\n\\(0.2\\)\n\n\n\n\n\n\\(3\\)\n\\(0.3\\)"
-  },
-  {
-    "objectID": "problem-sets/ps2.html#p2.2-blasius-boundary-layer-problem",
-    "href": "problem-sets/ps2.html#p2.2-blasius-boundary-layer-problem",
-    "title": "Problem Set 2",
-    "section": "P2.2 Blasius Boundary Layer Problem",
-    "text": "P2.2 Blasius Boundary Layer Problem\nThe Blasius equation arises in boundary layer theory. It describes the steady, two-dimensional, incompressible laminar flow over a semi-infinite flat plate aligned with a uniform free stream.\nAfter similarity reduction of the Navier–Stokes equations, the problem reduces to the nonlinear boundary value problem: \\[\nu'''(x) + u(x)\\,u''(x) = 0,\n\\] subject to the boundary conditions \\[\n\\left\\{\n\\begin{aligned}\nu(0) &= 0, \\\\\nu'(0) &= 0, \\\\\nu'(\\infty) &= 1.\n\\end{aligned}\n\\right.\n\\]\n\nWhat is the order of this ODE? Rewrite it as a system of first-order ODEs.\nShow that the Blasius equation and the boundary conditions at \\(x=0\\) are invariant under the scaling transformation (\\(c \\neq 0\\)) \\[\n\\begin{aligned}\n\\overline{u} &= c\\,u, \\\\\n\\overline{x} &= \\frac{x}{c}.\n\\end{aligned}\n\\]\n\nUnder this transformation, \\(\\overline{u}\\) satisfies the same differential equation as \\(u\\), but the condition at infinity is replaced by \\[\n\\overline{u}''(0) = 1.\n\\]\nDefine \\[\n\\alpha = \\overline{u}'(\\infty).\n\\]\n\nShow that choosing the scaling constant \\[\nc = \\sqrt{\\alpha}\n\\] leads to the normalization condition \\[\nu'(\\infty) = 1.\n\\]\nPropose a numerical method to solve this boundary value problem. (Indicate clearly how you would treat the condition at infinity.)"
-  },
-  {
-    "objectID": "problem-sets/ps2.html#p2.3-planar-three-body-problem",
-    "href": "problem-sets/ps2.html#p2.3-planar-three-body-problem",
-    "title": "Problem Set 2",
-    "section": "P2.3 Planar Three-Body Problem",
-    "text": "P2.3 Planar Three-Body Problem\nWe consider three point masses \\(m _ i &gt; 0\\) moving in the plane, with positions \\(\\underline{r _ i} \\left ( t \\right ) \\in \\mathbb R ^ 2\\) and velocities \\(\\underline{v _ i} \\left ( t \\right ) \\in \\mathbb R ^ 2\\), for \\(i = 1\\), \\(2\\) and \\(3\\). The only force is Newtonian gravity.\nThis is a classical problem in celestial mechanics, and it is known that no closed-form solution exists for the general case. We will study a particular periodic solution, known as the figure-eight solution, which was discovered numerically by Moore in 1993 and later proved to exist by Chenciner and Montgomery in 2000.\n\n\n\n\nFigure-eight orbit of the three-body problem (source: Wikipedia).\n\n\n\n\nModeling\n\nStarting from Newton’s law \\(m _ i \\underline{\\ddot r _ i} = \\underline{F _ i}\\) and the gravitational interaction between pairs, show that \\[\n\\dot r_i = v_i,\n\\qquad\n\\dot v_i = \\sum_{j\\neq i} G m _ j \\frac{\\underline{r _ j} - \\underline{r _ i}}{\\left \\Vert \\underline{r _ j} - \\underline{r _ i} \\right \\Vert ^ 3},\n\\qquad i = 1,2,3,\n\\] where \\(G\\) is the gravitational constant.\nWrite the system as a first-order ODE \\(\\dot q \\left ( t \\right ) = f \\left ( t, q \\left ( t \\right ) \\right )\\) in \\(\\mathbb R ^ {12}\\) by defining \\[\ny = \\left ( \\underline{r _ 1}, \\underline{r _ 2}, \\underline{r _ 3}, \\underline{v _ 1}, \\underline{v _ 2}, \\underline{v _ 3} \\right ).\n\\] Give the explicit expression of \\(f \\left ( t, q \\left ( t \\right ) \\right )\\).\nShow formally that the following quantities are invariants of the exact dynamics:\n\nTotal linear momentum \\[\n\\underline P  = \\sum _ i m_i \\underline{v _ i}\n\\]\nCenter of mass position \\[\n\\underline R = \\frac{1}{M} \\sum _ i m _ i \\underline{r _ i} \\quad \\mathrm{with} \\quad M = \\sum _ i m _ i\n\\]\nTotal energy \\[\nE = \\sum _ i \\frac 1 2 m _ i \\left \\Vert \\underline{v _ i} \\right \\Vert ^ 2 - \\sum _ {i &lt; j} \\frac{G m _ i m _ j}{\\left \\Vert \\underline{r _ i} - \\underline{r _ j} \\right \\Vert}\n\\]\n\n\n\n\nNumerical experiment (dimensionless units)\nTo avoid very large/small physical constants, use the dimensionless choice \\(G = 1\\) and take equal masses (\\(m _ 1 = m _ 2 = m _ 3 = 1\\)). The initial condition (a famous periodic solution of the three-body problem) in the plane: \\[\n\\begin{aligned}\nr _ 1(0) & = ( \\;\\;0.97000436,\\; -0.24308753), \\\\\nr _ 2(0) & = (-0.97000436,\\; \\;\\;0.24308753), \\\\\nr _ 3(0) & = (0,\\;0),\n\\end{aligned}\n\\] and \\[\n\\begin{aligned}\nv _ 1(0) &= ( \\;\\;0.466203685,\\; 0.432365730), \\\\\nv _ 2(0) &= ( \\;\\;0.466203685,\\; 0.432365730), \\\\\nv _ 3(0) &= (-0.93240737,\\; -0.86473146).\n\\end{aligned}\n\\]\n\nVerify from the initial data that:\n\nThe center of mass is at the origin and remains there (at least at \\(t = 0\\)).\nThe total linear momentum is zero at \\(t = 0\\).\n\nIntegrate the system over \\(t \\in \\left [ 0, T \\right ]\\) with \\(T = 10\\) using a constant time step \\(\\tau\\) (try \\(\\tau = 10 ^ {-2}\\) and \\(\\tau = 5 \\times 10 ^ {-3}\\)). Do this with:\n\nForward Euler\nRunge-Kutta 2\nMidpoint rule\n\nFor each method and each (h), compute and plot versus time:\n\nThe energy error (\\(E \\left ( t \\right ) - E \\left ( 0 \\right )\\))\nThe momentum norm (\\(\\left \\Vert \\underline P \\left ( t \\right ) \\right \\Vert\\))\nThe center of mass drift (\\(\\left \\Vert \\underline R \\left ( t \\right ) \\right \\Vert\\))\n\nPlot the planar trajectories of the three bodies and comment:\n\nDoes the motion remain bounded?\nDo you observe a qualitative difference between methods?\nWhich method best preserves invariants for a given step size?"
-  },
-  {
-    "objectID": "chapters/chapter5.html",
-    "href": "chapters/chapter5.html",
-    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
-    "section": "",
-    "text": "This chapter covers methods for solving systems of linear and nonlinear algebraic equations arising from discretized PDEs."
-  },
-  {
-    "objectID": "chapters/chapter5.html#overview",
-    "href": "chapters/chapter5.html#overview",
-    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
-    "section": "",
-    "text": "This chapter covers methods for solving systems of linear and nonlinear algebraic equations arising from discretized PDEs."
-  },
-  {
-    "objectID": "chapters/chapter5.html#learning-objectives",
-    "href": "chapters/chapter5.html#learning-objectives",
-    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nImplement direct solution methods\nApply iterative solution techniques\nUnderstand preconditioning strategies\nSolve nonlinear systems"
-  },
-  {
-    "objectID": "chapters/chapter5.html#topics",
-    "href": "chapters/chapter5.html#topics",
-    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
-    "section": "Topics",
-    "text": "Topics\n\n5.1 Direct Methods (Gaussian Elimination, LU Decomposition)\n\n\n5.2 Iterative Methods (Jacobi, Gauss-Seidel, SOR)\n\n\n5.3 Krylov Subspace Methods\n\n\n5.4 Preconditioning Techniques\n\n\n5.5 Nonlinear Systems (Newton-Raphson)"
-  },
-  {
-    "objectID": "chapters/chapter3.html",
-    "href": "chapters/chapter3.html",
-    "title": "Chapter 3: Boundary Value Problems",
-    "section": "",
-    "text": "This chapter addresses numerical solution techniques for boundary value problems in ordinary differential equations."
-  },
-  {
-    "objectID": "chapters/chapter3.html#overview",
-    "href": "chapters/chapter3.html#overview",
-    "title": "Chapter 3: Boundary Value Problems",
-    "section": "",
-    "text": "This chapter addresses numerical solution techniques for boundary value problems in ordinary differential equations."
-  },
-  {
-    "objectID": "chapters/chapter3.html#learning-objectives",
-    "href": "chapters/chapter3.html#learning-objectives",
-    "title": "Chapter 3: Boundary Value Problems",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nFormulate boundary value problems\nApply shooting methods\nImplement finite difference methods\nUnderstand finite element basics"
-  },
-  {
-    "objectID": "chapters/chapter3.html#topics",
-    "href": "chapters/chapter3.html#topics",
-    "title": "Chapter 3: Boundary Value Problems",
-    "section": "Topics",
-    "text": "Topics\n\n3.1 Introduction to BVPs\n\n\n3.2 Shooting Methods\n\n\n3.3 Finite Difference Methods\n\n\n3.4 Collocation Methods\n\n\n3.5 Introduction to Finite Elements"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
-    "section": "",
-    "text": "This course provides comprehensive coverage of computational methods for solving heat transfer, fluid dynamics, and energy conversion problems. Students will learn to implement and apply numerical techniques for engineering analysis and design."
-  },
-  {
-    "objectID": "index.html#course-overview",
-    "href": "index.html#course-overview",
-    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
-    "section": "",
-    "text": "This course provides comprehensive coverage of computational methods for solving heat transfer, fluid dynamics, and energy conversion problems. Students will learn to implement and apply numerical techniques for engineering analysis and design."
-  },
-  {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
-    "section": "Course Information",
-    "text": "Course Information\n\nInstructor: Vincent Le Chenadec\nInstitution: ESIEE Paris, Gustave Eiffel University\nPrerequisites: Ordinary Differential Equations, Partial Differential Equations, Fluid Mechanics, Heat Transfer"
-  },
-  {
-    "objectID": "index.html#topics-covered",
-    "href": "index.html#topics-covered",
-    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
-    "section": "Topics Covered",
-    "text": "Topics Covered\n\nNumerical methods for differential equations\nComputational fluid dynamics fundamentals\nHeat transfer simulation techniques\nEnergy system modeling\nHigh-performance computing for engineering applications"
-  },
-  {
-    "objectID": "index.html#getting-started",
-    "href": "index.html#getting-started",
-    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
-    "section": "Getting Started",
-    "text": "Getting Started\nNavigate through the course materials using the menu above. All lecture notes, assignments, and resources are available through this website."
-  },
-  {
-    "objectID": "chapters/chapter2.html",
-    "href": "chapters/chapter2.html",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "",
-    "text": "This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations."
-  },
-  {
-    "objectID": "chapters/chapter2.html#overview",
-    "href": "chapters/chapter2.html#overview",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "",
-    "text": "This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations."
-  },
-  {
-    "objectID": "chapters/chapter2.html#learning-objectives",
-    "href": "chapters/chapter2.html#learning-objectives",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nUnderstand the structure of initial value problems\nImplement explicit and implicit time integration schemes\nAnalyze stability and accuracy of numerical methods"
-  },
-  {
-    "objectID": "chapters/chapter2.html#introduction-to-ivps",
-    "href": "chapters/chapter2.html#introduction-to-ivps",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.1 Introduction to IVPs",
-    "text": "2.1 Introduction to IVPs\n\n2.1.1 Definition\nInitial value problems involve finding a function that satisfies a differential equation and meets specified initial conditions. The general form of an IVP is given by: \\[\n\\dot{\\underline q} \\left ( t \\right ) = f \\left ( t, \\underline q \\left ( t \\right )\\right ), \\quad t &gt; t _ 0,\n\\tag{1}\\] where,\n\n\\(t\\) is the independent variable (often time),\n\\(\\underline q\\) is the dependent variable (state vector, e.g., position, velocity, etc.),\n\\(\\forall t \\ge t _ 0\\), \\(\\underline q \\left ( t \\right ) \\in \\mathbb{R} ^ n\\),\n\\(f\\) is a given function defining the system dynamics (model),\n\\(\\forall t \\ge t _ 0\\), \\(\\underline q \\in \\mathbb R ^ n\\), \\(f \\left ( t, \\underline q \\right ) \\in \\mathbb{R} ^ n\\).\n\nThe definition of \\(q\\) is completed by specifying the initial condition at time \\(t _ 0\\): \\[\n\\underline q \\left ( t _ 0 \\right ) = \\underline{q _ 0}.\n\\tag{2}\\]\n\n\n\n\n\n\nNoteGlobal Cauchy–Lipschitz theorem\n\n\n\nLet \\(I = \\left [ t _ a, t _ b \\right ] \\subset \\mathbb R\\) be a closed interval with \\(t _ 0 \\in I\\). Let \\(f : I \\times \\mathbb R ^ n \\to \\mathbb R ^ n\\) satisfy:\n\nContinuity in time and state: \\(f\\) is continuous on \\(I \\times \\mathbb R ^ n\\).\nGlobal Lipschitz in the state (uniform in time): there exists \\(L &gt; 0\\) such that for all \\(t \\in I\\) and all \\(\\underline{q _ 1}\\), \\(\\underline{q _ 2} \\in \\mathbb R ^ n\\), \\[\n\\left \\Vert f \\left ( t, \\underline{q _ 1} \\right ) - f \\left ( t, \\underline{q _ 2} \\right ) \\right \\Vert \\le L \\left \\Vert \\underline{q _ 1} - \\underline{q _ 2} \\right \\Vert.\n\\]\n\nThen the initial value problem (equations 1 and 2) admits a unique solution \\(\\underline q \\in \\mathcal C ^ 1 \\left (I; \\mathbb R ^ n \\right )\\)1 on the whole interval \\(I\\).\n\n\n\n\n2.1.2 Examples of IVPs\n\nRadioactive decay\nA simple example of an IVP is the radioactive decay of a substance, described by the equation: \\[\n\\dot{N} \\left ( t \\right ) = -\\lambda N \\left ( t \\right ), \\quad N \\left ( 0 \\right ) = N _ 0,\n\\tag{3}\\] where \\(N \\left ( t \\right )\\) is the quantity of the substance at time \\(t\\), \\(\\lambda\\) is the decay constant, and \\(N _ 0\\) is the initial quantity.\nThis is one example of a scalar (\\(n = 1\\)) IVP. The analytical solution is given by: \\[\nN \\left ( t \\right ) = \\exp \\left ( -\\lambda t \\right ) N _ 0.\n\\]\nThe decay constant may be related to the half-life \\(t _ {1 / 2}\\) (the time required for half of the substance to decay) of the substance by the formula: \\[\nt _ {1 / 2} = \\frac{\\ln \\left ( 2 \\right )}{\\lambda}.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nEquation 3 is a first-order, linear, scalar, homogeneous and autonomous IVP. It is a very valuable model that will be used throughout this course to illustrate the properties of numerical methods for IVPs.\n\n\n\n\nSimple pendulum\nAnother example of an IVP is the motion of a simple pendulum, which consists of a mass attached to a string swinging under the influence of gravity. If the friction is neglected, the total energy of the system is conserved, so one can derive a ordinary differential equation for the angle of displacement \\(\\theta \\left ( t \\right )\\) from the vertical position.\nThe kinetic and potential energies of the pendulum are given by, \\[\nE _ k = \\frac{1}{2} m R ^ 2 \\dot \\theta ^ 2, \\quad \\mathrm{and} \\quad E _ p = -m g R \\cos \\theta,\n\\] respectively. Differentiating the total energy \\(E = E _ k + E _ p\\) with respect to time and setting the derivative to zero (since energy is conserved) leads to, \\[\nm R ^ 2 \\dot \\theta \\left ( \\ddot \\theta + \\frac{g}{R} \\sin \\theta \\right ) = 0.\n\\] The first solution (\\(\\dot \\theta = 0\\)) corresponds to the trivial case of a stationary pendulum, while the second solution gives the equation of motion, \\[\n\\ddot \\theta + \\omega ^ 2 \\sin \\theta = 0\n\\tag{4}\\] where \\(\\omega = \\sqrt{g / R}\\).\n\n\n\n\nSimple pendulum (source: Wikipedia).\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nEquation 4 is a second-order ordinary differential equation. In order to recover the canonical form (Equation 1), we introduce the state vector \\[\n\\underline q = \\begin{bmatrix}\n\\theta \\\\\n\\dot \\theta\n\\end{bmatrix}\n\\] leading to the system, \\[\n\\frac{\\mathrm d}{\\mathrm d t} \\begin{bmatrix}\nq _ 1 \\\\\nq _ 2\n\\end{bmatrix} = \\begin{bmatrix}\nq _ 2 \\\\\n- \\omega ^ 2 \\sin q _ 1\n\\end{bmatrix}.\n\\]\n\n\n\n\nPredator–prey model (Lotka–Volterra)\nThe Lotka–Volterra equations are a pair of first-order, nonlinear, ordinary differential equations that describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. The equations are given by: \\[\n\\begin{aligned}\n\\dot x & = \\alpha x - \\beta x y, \\\\\n\\dot y & = \\delta x y - \\gamma y,\n\\end{aligned}\n\\] where \\(x \\left ( t \\right )\\) and \\(y \\left ( t \\right )\\) represent the population sizes of the prey and predator species at time \\(t\\), respectively. The parameters \\(\\alpha\\), \\(\\beta\\), \\(\\delta\\), and \\(\\gamma\\) are positive constants that describe the interaction between the two species.\nThe first equation models the growth of the prey population, which increases at a rate proportional to its current size (\\(\\alpha x\\)) but decreases due to predation at a rate proportional to both the prey and predator populations (\\(\\beta x y\\)). The second equation models the growth of the predator population, which increases at a rate proportional to the number of prey consumed (\\(\\delta x y\\)) but decreases due to natural death at a rate proportional to its current size (\\(\\gamma y\\)).\n\n\n\n\nPopulation dynamics for rabbit and fox problem mentioned aside (source: Wikipedia)."
-  },
-  {
-    "objectID": "chapters/chapter2.html#numerical-methods-for-ivps",
-    "href": "chapters/chapter2.html#numerical-methods-for-ivps",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.2 Numerical methods for IVPs",
-    "text": "2.2 Numerical methods for IVPs\nAn important question in the numerical analysis of IVPs is whether a given numerical method will produce an approximation that converges to the true solution as the time step size \\(\\tau\\) approaches zero.\nFor linear initial value problems, convergence of a numerical scheme follows from consistency and stability. The Lax–Richtmyer equivalence theorem provides a rigorous proof of this statement in the finite-difference setting; analogous results hold for Runge–Kutta and other time-integration methods.\nThis section first introduces a simple model (referred to as a “toy model”), the form of which is first justified. Simple numerical schemes are then introduced. They are then applied to the numerical integration of the toy model. The consistency and stability of the resulting solution are then studied.\n\n2.2.1 A toy model\nLet us therefore consider the class of linear IVPs, \\[\n\\dot q = A \\, q,\n\\tag{5}\\] where \\(A \\in \\mathcal M _ n \\left ( \\mathbb R \\right )\\) is a constant matrix. This is a special case of the more general nonlinear IVPs given by Equation 1, where the function \\(f\\) is linear in \\(q\\) and does not depend on time.\nLet us also assume that the matrix \\(A\\) is diagonalizable. Then it admits a spectral decomposition of the form, \\[\nA = R \\Lambda L,\n\\tag{6}\\] where the columns of \\(R\\) are the right eigenvectors of \\(A\\), the rows of \\(L\\) are the left eigenvectors of \\(A\\), and \\(\\Lambda\\) is a diagonal matrix containing the eigenvalues of \\(A\\). The left and right eigenvectors are chosen such that they satisfy the biorthogonality condition, \\[\nL R = I,\n\\] where \\(I\\) is the identity matrix.\n\n\n\n\n\n\nNoteDiagonalizability\n\n\n\nA sufficient condition for a matrix to be diagonalizable is that it has \\(n\\) distinct eigenvalues. However, this condition is not necessary, as there are matrices with repeated eigenvalues that are still diagonalizable. In general, a matrix is diagonalizable if the algebraic multiplicity of each eigenvalue equals its geometric multiplicity (the number of linearly independent eigenvectors associated with that eigenvalue).\n\n\nSubstituting the spectral decomposition (Equation 6) into the linear IVP (Equation 5) and left-multiplying by \\(L\\) gives, \\[\n\\frac{\\mathrm d}{\\mathrm d t} \\left ( L q \\right ) = L A q = L R \\Lambda L q = \\Lambda \\left ( L q \\right ).\n\\] By introducing the characteristic variable \\(w = L q\\), we can rewrite the above equation as, \\[\n\\dot w = \\Lambda w,\n\\] or equivalently, \\[\n\\dot w _ i = \\lambda _ i w _ i, \\quad i = 1, \\ldots, n.\n\\]\nIn other words, the original system of \\(n\\) coupled ordinary differential equations has been decoupled into \\(n\\) independent scalar ordinary differential equations, each of which can be solved separately.\nThis motivates the study of the scalar IVP, \\[\n\\dot q = \\lambda q,\n\\tag{7}\\] already encountered in the context of the radioactive decay example. A small modification however is that \\(\\lambda\\) is now allowed to be a complex number, since the eigenvalues of a real matrix can be complex.\nThe solution of this initial value problem is known, \\[\nq \\left ( t \\right ) = \\exp \\left ( \\lambda t \\right ) q _ 0,\n\\] which has the remarkable property, \\[\nq \\left ( t + \\tau \\right ) = \\exp \\left ( \\lambda \\tau \\right ) q \\left ( t \\right ).\n\\tag{8}\\] This will be used in the following section.\n\n\n2.2.2 Basic time integration schemes\nIn order to approximate the solution of an IVP numerically, we discretize the time domain into a series of time steps. Let \\(t _ 0\\) be the initial time and \\(\\tau\\) be the time step size (assumed constant for simplicity, but can be variable in general). We define a sequence of discrete time points, \\[\nt _ n = n \\tau, \\quad n \\in \\mathbb N.\n\\] This is an arithmetic sequence where each time point is obtained by adding the time step size \\(\\tau\\) to the previous time point, \\[\nt _ {n + 1} = t _ n + \\tau.\n\\]\nThe underlying idea is to approximate the solution \\(q \\left ( t \\right )\\) at these discrete time points, denoted as \\(q _ n \\approx q \\left ( t _ n \\right )\\). Of course. This sequence is initialized using the initial condition, \\(q _ 0\\) (Equation 2). In fact, the property of the exact solution of the toy problem (Equation 8) can be written for \\(t = t _ n\\), \\[\nq \\left ( t _ {n + 1} \\right ) = \\exp \\left ( \\lambda \\tau \\right ) q \\left ( t _ n \\right ),\n\\] which shows that the exact solution sampled at constant rate \\(\\tau\\) forms a geometric sequence with common ratio, \\[\n\\sigma \\left ( z \\right ) \\equiv \\exp \\left ( z \\right ).\n\\]\nThe goal of a numerical method for IVPs is to produce a recurrence relation, akin to Equation 8, but for arbitrary models \\(f\\) (i.e. not just the toy model). The starting point for this is the integration of the IVP (Equation 1) over a single time step \\(\\left [ t _ n, t _ {n + 1} \\right ]\\), \\[\n\\int _ {t _ n} ^ {t _ {n + 1}} \\dot q \\left ( t \\right ) \\mathrm d t = \\int _ {t _ n} ^ {t _ {n + 1}} f \\left ( t, q \\left ( t \\right ) \\right ) \\mathrm d t,\n\\] which yields the exact recurrence relation, \\[\nq \\left ( t _ {n + 1} \\right ) = q \\left ( t _ n \\right ) + \\int _ {t _ n} ^ {t _ {n + 1}} f \\left ( t, q \\left ( t \\right ) \\right ) \\mathrm d t.\n\\]\nThis relation is of little practical use, because the integral depends on the unknown solution \\(q \\left ( t \\right )\\) for \\(t \\in \\left [ t _ n, t _ {n + 1} \\right ]\\). The idea is therefore to approximate the integral using some quadrature rule.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Solution and model for a sinusoidally forced first-order ODE\n\n\n\n\n\n, and the goal is to devise a recurrence relation that relates the \\(n + 1\\)th term of the sequence (\\(\\underline{q _ n}\\)) to some combination of a finite number of previous terms (\\(\\underline{q _ n}\\), \\(\\underline{q _ {n - 1}}\\), …, \\(\\underline{q _ {n + 1 - k}}\\)).\nIn the context of IVPs, the number of previous terms used to compute the next term is referred to as the number of steps. It is traditional to distinguish between:\n\nSingle-step methods (\\(k = 1\\)): these methods compute the next value \\(\\underline{q _ {n + 1}}\\) using only the current value \\(\\underline{q _ n}\\). Examples include the Euler method and Runge-Kutta methods.\nMulti-step methods (\\(k &gt; 1\\)): these methods compute the next value \\(\\underline{q _ {n + 1}}\\) using multiple previous values, such as \\(\\underline{q _ n}\\), \\(\\underline{q _ {n - 1}}\\), etc. Examples include Adams-Bashforth and Adams-Moulton methods.\n\n\n\n\n\n\n\nNoteFibonacci sequence\n\n\n\nA famous example of a linear multi-step (\\(k = 2\\)) sequence with constant coefficients is the Fibonacci sequence, defined by the recurrence relation: \\[\nF _ {n + 1} = F _ n + F _ {n - 1},\n\\] and the initial conditions, \\[\nF _ 0 = 0 \\quad \\mathrm{and} \\quad F _ 1 = 1.\n\\]"
-  },
-  {
-    "objectID": "chapters/chapter2.html#euler-methods",
-    "href": "chapters/chapter2.html#euler-methods",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.2 Euler Methods",
-    "text": "2.2 Euler Methods"
-  },
-  {
-    "objectID": "chapters/chapter2.html#runge-kutta-methods",
-    "href": "chapters/chapter2.html#runge-kutta-methods",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.3 Runge-Kutta Methods",
-    "text": "2.3 Runge-Kutta Methods"
-  },
-  {
-    "objectID": "chapters/chapter2.html#multi-step-methods",
-    "href": "chapters/chapter2.html#multi-step-methods",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.4 Multi-step Methods",
-    "text": "2.4 Multi-step Methods"
-  },
-  {
-    "objectID": "chapters/chapter2.html#stability-analysis",
-    "href": "chapters/chapter2.html#stability-analysis",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "2.5 Stability Analysis",
-    "text": "2.5 Stability Analysis"
-  },
-  {
-    "objectID": "chapters/chapter2.html#footnotes",
-    "href": "chapters/chapter2.html#footnotes",
-    "title": "Chapter 2: Initial Value Problems",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nSpace of all functions once continuously differentiable on \\(I\\).↩︎"
-  },
-  {
-    "objectID": "chapters/chapter1.html",
-    "href": "chapters/chapter1.html",
-    "title": "Chapter 1: Introduction",
-    "section": "",
-    "text": "Numerical methods approximate solutions to mathematical problems that are analytically intractable or prohibitively expensive to solve exactly. They translate mathematical models into algorithms that can be implemented on a computer to generate reliable, repeatable results. Numerical methods are widely used in engineering, physics, finance, and computer science to address differential equations, optimization, integration, and more."
-  },
-  {
-    "objectID": "chapters/chapter1.html#what-are-numerical-methods",
-    "href": "chapters/chapter1.html#what-are-numerical-methods",
-    "title": "Chapter 1: Introduction",
-    "section": "",
-    "text": "Numerical methods approximate solutions to mathematical problems that are analytically intractable or prohibitively expensive to solve exactly. They translate mathematical models into algorithms that can be implemented on a computer to generate reliable, repeatable results. Numerical methods are widely used in engineering, physics, finance, and computer science to address differential equations, optimization, integration, and more."
-  },
-  {
-    "objectID": "chapters/chapter1.html#learning-objectives",
-    "href": "chapters/chapter1.html#learning-objectives",
-    "title": "Chapter 1: Introduction",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nIdentify when numerical methods are required and why.\nUnderstand the sources of error and how they propagate.\nRecognize the governing equations that motivate the numerical models used in this course."
-  },
-  {
-    "objectID": "chapters/chapter1.html#importance-of-numerical-methods",
-    "href": "chapters/chapter1.html#importance-of-numerical-methods",
-    "title": "Chapter 1: Introduction",
-    "section": "Importance of numerical methods",
-    "text": "Importance of numerical methods\nModern engineering relies heavily on mathematical models to describe physical, chemical, and biological phenomena. These models are most often expressed in the form of algebraic equations, ordinary differential equations, or partial differential equations. In realistic settings, such equations are rarely solvable in closed form, either because of their nonlinearity, the complexity of the geometry, or the coupling of multiple physical processes.\nNumerical methods provide a systematic way to approximate the solutions of these models by transforming continuous mathematical problems into finite-dimensional problems that can be solved on a computer. Rather than producing exact formulas, numerical methods aim to deliver approximate solutions whose accuracy, stability, and reliability can be quantified and controlled.\nThe importance of numerical methods stems from several key aspects:\n\nComplexity of real-world problems\nEngineering systems often involve multiple spatial and temporal scales, nonlinear material behavior, and complex boundary conditions. Numerical methods make it possible to address such complexity in a systematic and reproducible manner.\nPredictive simulation\nNumerical simulations allow engineers to predict the behavior of systems before they are built or tested, reducing development costs and enabling design optimization. In many applications, numerical simulation is the only feasible tool for exploring extreme or inaccessible conditions.\nControl of approximation errors\nEvery numerical approximation introduces errors, originating from modeling assumptions, discretization, and finite-precision arithmetic. A central objective of numerical analysis is to understand how these errors arise, how they propagate, and how they can be reduced to acceptable levels.\nAlgorithmic efficiency and scalability\nPractical engineering problems often lead to very large computational systems. Numerical methods must therefore be designed not only for accuracy, but also for efficiency and scalability on modern computing architectures.\nBridging theory and computation\nNumerical methods form the link between mathematical theory and practical computation. They provide the tools required to turn governing equations into algorithms whose behavior can be analyzed, implemented, and validated."
-  },
-  {
-    "objectID": "chapters/chapter1.html#physical-models",
-    "href": "chapters/chapter1.html#physical-models",
-    "title": "Chapter 1: Introduction",
-    "section": "Physical models",
-    "text": "Physical models\nNumerical methods are most often developed and assessed in the context of mathematical models describing physical phenomena. In this course, we focus on models arising in fluid mechanics and heat transfer, as they provide representative examples of partial differential equations.\nThe purpose of this section is not to derive these models in detail, but to:\n\nintroduce the governing equations that motivate the numerical problems studied later,\nhighlight the mathematical structure of these equations,\nand identify the features that make their numerical approximation challenging.\n\nWe consider incompressible, viscous, and heat-conducting fluids occupying a spatial domain \\(\\Omega \\subset \\mathbb R^d\\), with \\(d \\in \\{1,2,3\\}\\).\n\nNotation\nThroughout this chapter, the following conventions are used:\n\nUnderlined symbols (e.g. \\(\\underline v\\)) denote vectors,\nDouble-underlined symbols (e.g. \\(\\underline{\\underline{s}}\\)) denote second-order tensors,\n\\(\\operatorname{grad}\\) and \\(\\operatorname{div}\\) denote the gradient and divergence operators, respectively.\n\n\n\n1.1.1 Continuity equation (mass conservation)\nThe conservation of mass is expressed by the continuity equation, \\[\n\\partial_t \\rho + \\operatorname{div} \\left ( \\rho \\underline v \\right ) = 0,\n\\] where \\(\\rho\\) denotes the mass density and \\(\\underline v\\) the velocity field.\nIn the incompressible limit, where the density is constant, this equation reduces to the solenoidal constraint \\[\n\\operatorname{div} \\underline v = 0.\n\\]\nThis constraint is equivalent to the statement that the fluid volume is preserved during the flow. It plays a central role in the numerical approximation of incompressible flows, as it couples the velocity field to the pressure.\n\n\n1.1.2 Navier–Stokes equations (momentum conservation)\nThe conservation of linear momentum expresses Newton’s second law at the continuum level, \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n= \\operatorname{div} \\underline{\\underline{s}},\n\\] where \\(\\underline{\\underline{s}}\\) denotes the Cauchy stress tensor.\nThe stress tensor is decomposed into an isotropic and a deviatoric part, \\[\n\\underline{\\underline{s}}\n= -P \\, \\underline{\\underline{\\delta}} + \\underline{\\underline{s}}^\\circ,\n\\] where:\n\n\\(P\\) is the mechanical pressure,\n\\(\\underline{\\underline{\\delta}}\\) is the identity tensor,\n\\(\\underline{\\underline{s}}^\\circ\\) is the deviatoric stress tensor.\n\nSubstituting this decomposition into the momentum equation yields \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n+ \\operatorname{grad} P\n= \\operatorname{div} \\underline{\\underline{s}}^\\circ.\n\\]\nFor a Newtonian fluid, linear non-equilibrium thermodynamics leads to the relations \\[\nP = p - \\eta \\, \\operatorname{div} \\underline v,\n\\] and \\[\n\\underline{\\underline{s}}^\\circ\n= 2 \\mu \\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ],\n\\] where \\(\\mu\\) is the dynamic viscosity, \\(\\eta\\) the bulk viscosity, and \\(d\\) the spatial dimension.\nIt is convenient to introduce the viscous stress tensor \\[\n\\underline{\\underline{\\tau}}\n\\equiv\n2 \\mu \\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n+ \\left ( \\eta - \\frac{2 \\mu}{d} \\right )\n\\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}},\n\\] so that the momentum equation can be written in the compact form \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n+ \\operatorname{grad} p\n= \\operatorname{div} \\underline{\\underline{\\tau}}.\n\\]\nThese equations form a nonlinear, time-dependent system whose numerical solution poses significant challenges, particularly in the incompressible limit.\n\n\n1.1.3 Energy equation (heat transfer)\nThe conservation of total energy is written as \\[\n\\partial_t \\left ( \\rho \\varepsilon \\right )\n+ \\operatorname{div} \\left [ \\left ( \\rho \\varepsilon + P \\right ) \\underline v \\right ]\n=\n\\operatorname{div} \\left ( \\underline v \\cdot \\underline{\\underline{s}}^\\circ\n- \\underline q \\right ),\n\\] where \\(\\varepsilon\\) is the specific total energy and \\(\\underline q\\) denotes the heat flux.\nUsing Fourier’s law, \\[\n\\underline q = -\\kappa \\, \\operatorname{grad} T,\n\\] and separating kinetic and internal energy contributions, one obtains an equation for the internal energy \\(e\\), \\[\n\\partial_t \\left ( \\rho e \\right )\n+ \\operatorname{div} \\left ( \\rho e \\underline v + \\underline q \\right )\n=\n\\Phi - p \\operatorname{div} \\underline v,\n\\tag{1}\\] where the viscous dissipation term \\(\\Phi\\) is given by \\[\n\\Phi\n=\n\\eta \\left ( \\operatorname{div} \\underline v \\right )^2\n+\n2 \\mu\n\\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ]\n:\n\\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ].\n\\] By construction, \\(\\Phi\\) is non-negative, reflecting irreversible dissipation.\n\n\n1.1.4 Boundary conditions\nTo obtain a well-posed mathematical problem, the governing equations must be supplemented with appropriate boundary conditions.\nFor the velocity field, common choices include:\n\nno-slip conditions at solid walls,\nfree-slip conditions,\ninflow/outflow conditions at open boundaries.\n\nFor the temperature field, typical boundary conditions are:\n\nprescribed temperature (Dirichlet),\nprescribed heat flux (Neumann),\nconvective heat transfer (Robin).\n\nThe choice of boundary conditions has a strong influence on both the mathematical properties of the problem and the design of numerical methods."
-  },
-  {
-    "objectID": "chapters/chapter1.html#model-scalar-transport-equation",
-    "href": "chapters/chapter1.html#model-scalar-transport-equation",
-    "title": "Chapter 1: Introduction",
-    "section": "Model scalar transport equation",
-    "text": "Model scalar transport equation\nThe aforementioned systems of equations form a set of coupled, nonlinear partial differential equations whose direct numerical solution is challenging. To introduce and test numerical ideas in a controlled setting, we will frequently use a simpler model problem that retains the main mathematical features while remaining easier to analyze.\nStarting from the internal energy equation (Equation 1), we neglect viscous dissipation and pressure work and assume the equation of state \\[\n\\mathrm d _ t e = \\rho c \\, \\mathrm d _ t T,\n\\] valid for a perfect gas. \\(\\mathrm d _ t\\) denotes the material derivative and \\(c\\) is the specific heat capacity. With Fourier’s law and constant coefficients, the temperature field satisfies the scalar advection-diffusion equation \\[\n\\partial _ t T + \\underline v \\cdot \\operatorname{grad} T = \\alpha \\, \\Delta T + f,\n\\] where \\(f\\) is a volumetric source term and \\[\n\\alpha \\equiv \\frac{\\kappa}{\\rho c}\n\\] is the thermal diffusivity. This equation combines hyperbolic (advection) and parabolic (diffusion) effects.\nIn this course we will focus on purely conductive phenomena, so we will set \\(\\underline v = \\underline 0\\) and study the resulting diffusion model in Cartesian coordinates (\\(x\\), \\(y\\), \\(z\\)). These simplified equations provide a clean test bed for discretization, stability analysis, and error estimation. By the end of the class, you will be able to numerically solve the following equations.\n\n1.2.1 The heat equation\nIn one spatial dimension, the heat equation reads, \\[\n\\partial _ t T = \\alpha \\, \\partial _ {x x} T + f.\n\\]\n\n\n1.2.2 The Poisson equation\nIn steady-state conditions, the heat equation reduces to the Poisson equation, \\[\n0 = \\alpha \\, \\left ( \\partial _ {xx} T + \\partial _ {yy} T \\right ) + f.\n\\] (Written for two spatial dimensions.)"
-  },
-  {
-    "objectID": "chapters/chapter4.html",
-    "href": "chapters/chapter4.html",
-    "title": "Chapter 4: Elliptic and Parabolic Problems",
-    "section": "",
-    "text": "This chapter focuses on numerical methods for elliptic and parabolic partial differential equations relevant to heat transfer and fluid flow."
-  },
-  {
-    "objectID": "chapters/chapter4.html#overview",
-    "href": "chapters/chapter4.html#overview",
-    "title": "Chapter 4: Elliptic and Parabolic Problems",
-    "section": "",
-    "text": "This chapter focuses on numerical methods for elliptic and parabolic partial differential equations relevant to heat transfer and fluid flow."
-  },
-  {
-    "objectID": "chapters/chapter4.html#learning-objectives",
-    "href": "chapters/chapter4.html#learning-objectives",
-    "title": "Chapter 4: Elliptic and Parabolic Problems",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nClassify partial differential equations\nDiscretize elliptic and parabolic PDEs\nImplement solution algorithms for heat transfer problems\nHandle boundary conditions"
-  },
-  {
-    "objectID": "chapters/chapter4.html#topics",
-    "href": "chapters/chapter4.html#topics",
-    "title": "Chapter 4: Elliptic and Parabolic Problems",
-    "section": "Topics",
-    "text": "Topics\n\n4.1 Classification of PDEs\n\n\n4.2 Elliptic Problems (Steady-State Heat Transfer)\n\n\n4.3 Parabolic Problems (Transient Heat Transfer)\n\n\n4.4 Finite Difference Discretization\n\n\n4.5 Stability and Convergence"
-  },
-  {
     "objectID": "problem-sets/ps1.html",
     "href": "problem-sets/ps1.html",
     "title": "Problem Set 1",
@@ -313,5 +54,285 @@
     "title": "Problem Set 1",
     "section": "P1.5 Nonlinear IVP",
     "text": "P1.5 Nonlinear IVP\nConsider the nonlinear initial value problem\n\\[\\begin{cases}\ny' = y(1 - y), \\\\\ny(0) = 0.1.\n\\end{cases}\\]\n\nApply the forward Euler method to the numerical solution of this problem.\nConsider applying the backward Euler method: what type of equation must be solved at each time step?"
+  },
+  {
+    "objectID": "chapters/chapter4.html",
+    "href": "chapters/chapter4.html",
+    "title": "Chapter 4: Elliptic and Parabolic Problems",
+    "section": "",
+    "text": "This chapter focuses on numerical methods for elliptic and parabolic partial differential equations relevant to heat transfer and fluid flow."
+  },
+  {
+    "objectID": "chapters/chapter4.html#overview",
+    "href": "chapters/chapter4.html#overview",
+    "title": "Chapter 4: Elliptic and Parabolic Problems",
+    "section": "",
+    "text": "This chapter focuses on numerical methods for elliptic and parabolic partial differential equations relevant to heat transfer and fluid flow."
+  },
+  {
+    "objectID": "chapters/chapter4.html#learning-objectives",
+    "href": "chapters/chapter4.html#learning-objectives",
+    "title": "Chapter 4: Elliptic and Parabolic Problems",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nClassify partial differential equations\nDiscretize elliptic and parabolic PDEs\nImplement solution algorithms for heat transfer problems\nHandle boundary conditions"
+  },
+  {
+    "objectID": "chapters/chapter4.html#topics",
+    "href": "chapters/chapter4.html#topics",
+    "title": "Chapter 4: Elliptic and Parabolic Problems",
+    "section": "Topics",
+    "text": "Topics\n\n4.1 Classification of PDEs\n\n\n4.2 Elliptic Problems (Steady-State Heat Transfer)\n\n\n4.3 Parabolic Problems (Transient Heat Transfer)\n\n\n4.4 Finite Difference Discretization\n\n\n4.5 Stability and Convergence"
+  },
+  {
+    "objectID": "chapters/chapter1.html",
+    "href": "chapters/chapter1.html",
+    "title": "Chapter 1: Introduction",
+    "section": "",
+    "text": "Numerical methods approximate solutions to mathematical problems that are analytically intractable or prohibitively expensive to solve exactly. They translate mathematical models into algorithms that can be implemented on a computer to generate reliable, repeatable results. Numerical methods are widely used in engineering, physics, finance, and computer science to address differential equations, optimization, integration, and more."
+  },
+  {
+    "objectID": "chapters/chapter1.html#what-are-numerical-methods",
+    "href": "chapters/chapter1.html#what-are-numerical-methods",
+    "title": "Chapter 1: Introduction",
+    "section": "",
+    "text": "Numerical methods approximate solutions to mathematical problems that are analytically intractable or prohibitively expensive to solve exactly. They translate mathematical models into algorithms that can be implemented on a computer to generate reliable, repeatable results. Numerical methods are widely used in engineering, physics, finance, and computer science to address differential equations, optimization, integration, and more."
+  },
+  {
+    "objectID": "chapters/chapter1.html#learning-objectives",
+    "href": "chapters/chapter1.html#learning-objectives",
+    "title": "Chapter 1: Introduction",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nIdentify when numerical methods are required and why.\nUnderstand the sources of error and how they propagate.\nRecognize the governing equations that motivate the numerical models used in this course."
+  },
+  {
+    "objectID": "chapters/chapter1.html#importance-of-numerical-methods",
+    "href": "chapters/chapter1.html#importance-of-numerical-methods",
+    "title": "Chapter 1: Introduction",
+    "section": "Importance of numerical methods",
+    "text": "Importance of numerical methods\nModern engineering relies heavily on mathematical models to describe physical, chemical, and biological phenomena. These models are most often expressed in the form of algebraic equations, ordinary differential equations, or partial differential equations. In realistic settings, such equations are rarely solvable in closed form, either because of their nonlinearity, the complexity of the geometry, or the coupling of multiple physical processes.\nNumerical methods provide a systematic way to approximate the solutions of these models by transforming continuous mathematical problems into finite-dimensional problems that can be solved on a computer. Rather than producing exact formulas, numerical methods aim to deliver approximate solutions whose accuracy, stability, and reliability can be quantified and controlled.\nThe importance of numerical methods stems from several key aspects:\n\nComplexity of real-world problems\nEngineering systems often involve multiple spatial and temporal scales, nonlinear material behavior, and complex boundary conditions. Numerical methods make it possible to address such complexity in a systematic and reproducible manner.\nPredictive simulation\nNumerical simulations allow engineers to predict the behavior of systems before they are built or tested, reducing development costs and enabling design optimization. In many applications, numerical simulation is the only feasible tool for exploring extreme or inaccessible conditions.\nControl of approximation errors\nEvery numerical approximation introduces errors, originating from modeling assumptions, discretization, and finite-precision arithmetic. A central objective of numerical analysis is to understand how these errors arise, how they propagate, and how they can be reduced to acceptable levels.\nAlgorithmic efficiency and scalability\nPractical engineering problems often lead to very large computational systems. Numerical methods must therefore be designed not only for accuracy, but also for efficiency and scalability on modern computing architectures.\nBridging theory and computation\nNumerical methods form the link between mathematical theory and practical computation. They provide the tools required to turn governing equations into algorithms whose behavior can be analyzed, implemented, and validated."
+  },
+  {
+    "objectID": "chapters/chapter1.html#physical-models",
+    "href": "chapters/chapter1.html#physical-models",
+    "title": "Chapter 1: Introduction",
+    "section": "Physical models",
+    "text": "Physical models\nNumerical methods are most often developed and assessed in the context of mathematical models describing physical phenomena. In this course, we focus on models arising in fluid mechanics and heat transfer, as they provide representative examples of partial differential equations.\nThe purpose of this section is not to derive these models in detail, but to:\n\nintroduce the governing equations that motivate the numerical problems studied later,\nhighlight the mathematical structure of these equations,\nand identify the features that make their numerical approximation challenging.\n\nWe consider incompressible, viscous, and heat-conducting fluids occupying a spatial domain \\(\\Omega \\subset \\mathbb R^d\\), with \\(d \\in \\{1,2,3\\}\\).\n\nNotation\nThroughout this chapter, the following conventions are used:\n\nUnderlined symbols (e.g. \\(\\underline v\\)) denote vectors,\nDouble-underlined symbols (e.g. \\(\\underline{\\underline{s}}\\)) denote second-order tensors,\n\\(\\operatorname{grad}\\) and \\(\\operatorname{div}\\) denote the gradient and divergence operators, respectively.\n\n\n\n1.1.1 Continuity equation (mass conservation)\nThe conservation of mass is expressed by the continuity equation, \\[\n\\partial_t \\rho + \\operatorname{div} \\left ( \\rho \\underline v \\right ) = 0,\n\\] where \\(\\rho\\) denotes the mass density and \\(\\underline v\\) the velocity field.\nIn the incompressible limit, where the density is constant, this equation reduces to the solenoidal constraint \\[\n\\operatorname{div} \\underline v = 0.\n\\]\nThis constraint is equivalent to the statement that the fluid volume is preserved during the flow. It plays a central role in the numerical approximation of incompressible flows, as it couples the velocity field to the pressure.\n\n\n1.1.2 Navier–Stokes equations (momentum conservation)\nThe conservation of linear momentum expresses Newton’s second law at the continuum level, \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n= \\operatorname{div} \\underline{\\underline{s}},\n\\] where \\(\\underline{\\underline{s}}\\) denotes the Cauchy stress tensor.\nThe stress tensor is decomposed into an isotropic and a deviatoric part, \\[\n\\underline{\\underline{s}}\n= -P \\, \\underline{\\underline{\\delta}} + \\underline{\\underline{s}}^\\circ,\n\\] where:\n\n\\(P\\) is the mechanical pressure,\n\\(\\underline{\\underline{\\delta}}\\) is the identity tensor,\n\\(\\underline{\\underline{s}}^\\circ\\) is the deviatoric stress tensor.\n\nSubstituting this decomposition into the momentum equation yields \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n+ \\operatorname{grad} P\n= \\operatorname{div} \\underline{\\underline{s}}^\\circ.\n\\]\nFor a Newtonian fluid, linear non-equilibrium thermodynamics leads to the relations \\[\nP = p - \\eta \\, \\operatorname{div} \\underline v,\n\\] and \\[\n\\underline{\\underline{s}}^\\circ\n= 2 \\mu \\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ],\n\\] where \\(\\mu\\) is the dynamic viscosity, \\(\\eta\\) the bulk viscosity, and \\(d\\) the spatial dimension.\nIt is convenient to introduce the viscous stress tensor \\[\n\\underline{\\underline{\\tau}}\n\\equiv\n2 \\mu \\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n+ \\left ( \\eta - \\frac{2 \\mu}{d} \\right )\n\\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}},\n\\] so that the momentum equation can be written in the compact form \\[\n\\partial_t \\left ( \\rho \\underline v \\right )\n+ \\operatorname{div} \\left ( \\rho \\underline v \\underline v \\right )\n+ \\operatorname{grad} p\n= \\operatorname{div} \\underline{\\underline{\\tau}}.\n\\]\nThese equations form a nonlinear, time-dependent system whose numerical solution poses significant challenges, particularly in the incompressible limit.\n\n\n1.1.3 Energy equation (heat transfer)\nThe conservation of total energy is written as \\[\n\\partial_t \\left ( \\rho \\varepsilon \\right )\n+ \\operatorname{div} \\left [ \\left ( \\rho \\varepsilon + P \\right ) \\underline v \\right ]\n=\n\\operatorname{div} \\left ( \\underline v \\cdot \\underline{\\underline{s}}^\\circ\n- \\underline q \\right ),\n\\] where \\(\\varepsilon\\) is the specific total energy and \\(\\underline q\\) denotes the heat flux.\nUsing Fourier’s law, \\[\n\\underline q = -\\kappa \\, \\operatorname{grad} T,\n\\] and separating kinetic and internal energy contributions, one obtains an equation for the internal energy \\(e\\), \\[\n\\partial_t \\left ( \\rho e \\right )\n+ \\operatorname{div} \\left ( \\rho e \\underline v + \\underline q \\right )\n=\n\\Phi - p \\operatorname{div} \\underline v,\n\\tag{1}\\] where the viscous dissipation term \\(\\Phi\\) is given by \\[\n\\Phi\n=\n\\eta \\left ( \\operatorname{div} \\underline v \\right )^2\n+\n2 \\mu\n\\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ]\n:\n\\left [\n\\left ( \\operatorname{grad} \\underline v \\right )_{\\operatorname{sym}}\n- \\frac{1}{d} \\left ( \\operatorname{div} \\underline v \\right )\n\\underline{\\underline{\\delta}}\n\\right ].\n\\] By construction, \\(\\Phi\\) is non-negative, reflecting irreversible dissipation.\n\n\n1.1.4 Boundary conditions\nTo obtain a well-posed mathematical problem, the governing equations must be supplemented with appropriate boundary conditions.\nFor the velocity field, common choices include:\n\nno-slip conditions at solid walls,\nfree-slip conditions,\ninflow/outflow conditions at open boundaries.\n\nFor the temperature field, typical boundary conditions are:\n\nprescribed temperature (Dirichlet),\nprescribed heat flux (Neumann),\nconvective heat transfer (Robin).\n\nThe choice of boundary conditions has a strong influence on both the mathematical properties of the problem and the design of numerical methods."
+  },
+  {
+    "objectID": "chapters/chapter1.html#model-scalar-transport-equation",
+    "href": "chapters/chapter1.html#model-scalar-transport-equation",
+    "title": "Chapter 1: Introduction",
+    "section": "Model scalar transport equation",
+    "text": "Model scalar transport equation\nThe aforementioned systems of equations form a set of coupled, nonlinear partial differential equations whose direct numerical solution is challenging. To introduce and test numerical ideas in a controlled setting, we will frequently use a simpler model problem that retains the main mathematical features while remaining easier to analyze.\nStarting from the internal energy equation (Equation 1), we neglect viscous dissipation and pressure work and assume the equation of state \\[\n\\mathrm d _ t e = \\rho c \\, \\mathrm d _ t T,\n\\] valid for a perfect gas. \\(\\mathrm d _ t\\) denotes the material derivative and \\(c\\) is the specific heat capacity. With Fourier’s law and constant coefficients, the temperature field satisfies the scalar advection-diffusion equation \\[\n\\partial _ t T + \\underline v \\cdot \\operatorname{grad} T = \\alpha \\, \\Delta T + f,\n\\] where \\(f\\) is a volumetric source term and \\[\n\\alpha \\equiv \\frac{\\kappa}{\\rho c}\n\\] is the thermal diffusivity. This equation combines hyperbolic (advection) and parabolic (diffusion) effects.\nIn this course we will focus on purely conductive phenomena, so we will set \\(\\underline v = \\underline 0\\) and study the resulting diffusion model in Cartesian coordinates (\\(x\\), \\(y\\), \\(z\\)). These simplified equations provide a clean test bed for discretization, stability analysis, and error estimation. By the end of the class, you will be able to numerically solve the following equations.\n\n1.2.1 The heat equation\nIn one spatial dimension, the heat equation reads, \\[\n\\partial _ t T = \\alpha \\, \\partial _ {x x} T + f.\n\\]\n\n\n1.2.2 The Poisson equation\nIn steady-state conditions, the heat equation reduces to the Poisson equation, \\[\n0 = \\alpha \\, \\left ( \\partial _ {xx} T + \\partial _ {yy} T \\right ) + f.\n\\] (Written for two spatial dimensions.)"
+  },
+  {
+    "objectID": "chapters/chapter2.html",
+    "href": "chapters/chapter2.html",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "",
+    "text": "This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations."
+  },
+  {
+    "objectID": "chapters/chapter2.html#overview",
+    "href": "chapters/chapter2.html#overview",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "",
+    "text": "This chapter covers numerical methods for solving initial value problems (IVPs) in ordinary differential equations."
+  },
+  {
+    "objectID": "chapters/chapter2.html#learning-objectives",
+    "href": "chapters/chapter2.html#learning-objectives",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstand the structure of initial value problems\nImplement explicit and implicit time integration schemes\nAnalyze stability and accuracy of numerical methods"
+  },
+  {
+    "objectID": "chapters/chapter2.html#introduction-to-ivps",
+    "href": "chapters/chapter2.html#introduction-to-ivps",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.1 Introduction to IVPs",
+    "text": "2.1 Introduction to IVPs\n\n2.1.1 Definition\nInitial value problems involve finding a function that satisfies a differential equation and meets specified initial conditions. The general form of an IVP is given by: \\[\n\\dot{\\underline q} \\left ( t \\right ) = f \\left ( t, \\underline q \\left ( t \\right )\\right ), \\quad t &gt; t _ 0,\n\\tag{1}\\] where,\n\n\\(t\\) is the independent variable (often time),\n\\(\\underline q\\) is the dependent variable (state vector, e.g., position, velocity, etc.),\n\\(\\forall t \\ge t _ 0\\), \\(\\underline q \\left ( t \\right ) \\in \\mathbb{R} ^ n\\),\n\\(f\\) is a given function defining the system dynamics (model),\n\\(\\forall t \\ge t _ 0\\), \\(\\underline q \\in \\mathbb R ^ n\\), \\(f \\left ( t, \\underline q \\right ) \\in \\mathbb{R} ^ n\\).\n\nThe definition of \\(q\\) is completed by specifying the initial condition at time \\(t _ 0\\): \\[\n\\underline q \\left ( t _ 0 \\right ) = \\underline{q _ 0}.\n\\tag{2}\\]\n\n\n\n\n\n\nNoteGlobal Cauchy–Lipschitz theorem\n\n\n\nLet \\(I = \\left [ t _ a, t _ b \\right ] \\subset \\mathbb R\\) be a closed interval with \\(t _ 0 \\in I\\). Let \\(f : I \\times \\mathbb R ^ n \\to \\mathbb R ^ n\\) satisfy:\n\nContinuity in time and state: \\(f\\) is continuous on \\(I \\times \\mathbb R ^ n\\).\nGlobal Lipschitz in the state (uniform in time): there exists \\(L &gt; 0\\) such that for all \\(t \\in I\\) and all \\(\\underline{q _ 1}\\), \\(\\underline{q _ 2} \\in \\mathbb R ^ n\\), \\[\n\\left \\Vert f \\left ( t, \\underline{q _ 1} \\right ) - f \\left ( t, \\underline{q _ 2} \\right ) \\right \\Vert \\le L \\left \\Vert \\underline{q _ 1} - \\underline{q _ 2} \\right \\Vert.\n\\]\n\nThen the initial value problem (equations 1 and 2) admits a unique solution \\(\\underline q \\in \\mathcal C ^ 1 \\left (I; \\mathbb R ^ n \\right )\\)1 on the whole interval \\(I\\).\n\n\n\n\n2.1.2 Examples of IVPs\n\nRadioactive decay\nA simple example of an IVP is the radioactive decay of a substance, described by the equation: \\[\n\\dot{N} \\left ( t \\right ) = -\\lambda N \\left ( t \\right ), \\quad N \\left ( 0 \\right ) = N _ 0,\n\\tag{3}\\] where \\(N \\left ( t \\right )\\) is the quantity of the substance at time \\(t\\), \\(\\lambda\\) is the decay constant, and \\(N _ 0\\) is the initial quantity.\nThis is one example of a scalar (\\(n = 1\\)) IVP. The analytical solution is given by: \\[\nN \\left ( t \\right ) = \\exp \\left ( -\\lambda t \\right ) N _ 0.\n\\]\nThe decay constant may be related to the half-life \\(t _ {1 / 2}\\) (the time required for half of the substance to decay) of the substance by the formula: \\[\nt _ {1 / 2} = \\frac{\\ln \\left ( 2 \\right )}{\\lambda}.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nEquation 3 is a first-order, linear, scalar, homogeneous and autonomous IVP. It is a very valuable model that will be used throughout this course to illustrate the properties of numerical methods for IVPs.\n\n\n\n\nSimple pendulum\nAnother example of an IVP is the motion of a simple pendulum, which consists of a mass attached to a string swinging under the influence of gravity. If the friction is neglected, the total energy of the system is conserved, so one can derive a ordinary differential equation for the angle of displacement \\(\\theta \\left ( t \\right )\\) from the vertical position.\nThe kinetic and potential energies of the pendulum are given by, \\[\nE _ k = \\frac{1}{2} m R ^ 2 \\dot \\theta ^ 2, \\quad \\mathrm{and} \\quad E _ p = -m g R \\cos \\theta,\n\\] respectively. Differentiating the total energy \\(E = E _ k + E _ p\\) with respect to time and setting the derivative to zero (since energy is conserved) leads to, \\[\nm R ^ 2 \\dot \\theta \\left ( \\ddot \\theta + \\frac{g}{R} \\sin \\theta \\right ) = 0.\n\\] The first solution (\\(\\dot \\theta = 0\\)) corresponds to the trivial case of a stationary pendulum, while the second solution gives the equation of motion, \\[\n\\ddot \\theta + \\omega ^ 2 \\sin \\theta = 0\n\\tag{4}\\] where \\(\\omega = \\sqrt{g / R}\\).\n\n\n\n\nSimple pendulum (source: Wikipedia).\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nEquation 4 is a second-order ordinary differential equation. In order to recover the canonical form (Equation 1), we introduce the state vector \\[\n\\underline q = \\begin{bmatrix}\n\\theta \\\\\n\\dot \\theta\n\\end{bmatrix}\n\\] leading to the system, \\[\n\\frac{\\mathrm d}{\\mathrm d t} \\begin{bmatrix}\nq _ 1 \\\\\nq _ 2\n\\end{bmatrix} = \\begin{bmatrix}\nq _ 2 \\\\\n- \\omega ^ 2 \\sin q _ 1\n\\end{bmatrix}.\n\\]\n\n\n\n\nPredator–prey model (Lotka–Volterra)\nThe Lotka–Volterra equations are a pair of first-order, nonlinear, ordinary differential equations that describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey. The equations are given by: \\[\n\\begin{aligned}\n\\dot x & = \\alpha x - \\beta x y, \\\\\n\\dot y & = \\delta x y - \\gamma y,\n\\end{aligned}\n\\] where \\(x \\left ( t \\right )\\) and \\(y \\left ( t \\right )\\) represent the population sizes of the prey and predator species at time \\(t\\), respectively. The parameters \\(\\alpha\\), \\(\\beta\\), \\(\\delta\\), and \\(\\gamma\\) are positive constants that describe the interaction between the two species.\nThe first equation models the growth of the prey population, which increases at a rate proportional to its current size (\\(\\alpha x\\)) but decreases due to predation at a rate proportional to both the prey and predator populations (\\(\\beta x y\\)). The second equation models the growth of the predator population, which increases at a rate proportional to the number of prey consumed (\\(\\delta x y\\)) but decreases due to natural death at a rate proportional to its current size (\\(\\gamma y\\)).\n\n\n\n\nPopulation dynamics for rabbit and fox problem mentioned aside (source: Wikipedia)."
+  },
+  {
+    "objectID": "chapters/chapter2.html#numerical-methods-for-ivps",
+    "href": "chapters/chapter2.html#numerical-methods-for-ivps",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.2 Numerical methods for IVPs",
+    "text": "2.2 Numerical methods for IVPs\nAn important question in the numerical analysis of IVPs is whether a given numerical method will produce an approximation that converges to the true solution as the time step size \\(\\tau\\) approaches zero.\nFor linear initial value problems, convergence of a numerical scheme follows from consistency and stability. The Lax–Richtmyer equivalence theorem provides a rigorous proof of this statement in the finite-difference setting; analogous results hold for Runge–Kutta and other time-integration methods.\nThis section first introduces a simple model (referred to as a “toy model”), the form of which is first justified. Simple numerical schemes are then introduced. They are then applied to the numerical integration of the toy model. The consistency and stability of the resulting solution are then studied.\n\n2.2.1 A toy model\nLet us therefore consider the class of linear IVPs, \\[\n\\dot q = A \\, q,\n\\tag{5}\\] where \\(A \\in \\mathcal M _ n \\left ( \\mathbb R \\right )\\) is a constant matrix. This is a special case of the more general nonlinear IVPs given by Equation 1, where the function \\(f\\) is linear in \\(q\\) and does not depend on time.\nLet us also assume that the matrix \\(A\\) is diagonalizable. Then it admits a spectral decomposition of the form, \\[\nA = R \\Lambda L,\n\\tag{6}\\] where the columns of \\(R\\) are the right eigenvectors of \\(A\\), the rows of \\(L\\) are the left eigenvectors of \\(A\\), and \\(\\Lambda\\) is a diagonal matrix containing the eigenvalues of \\(A\\). The left and right eigenvectors are chosen such that they satisfy the biorthogonality condition, \\[\nL R = I,\n\\] where \\(I\\) is the identity matrix.\n\n\n\n\n\n\nNoteDiagonalizability\n\n\n\nA sufficient condition for a matrix to be diagonalizable is that it has \\(n\\) distinct eigenvalues. However, this condition is not necessary, as there are matrices with repeated eigenvalues that are still diagonalizable. In general, a matrix is diagonalizable if the algebraic multiplicity of each eigenvalue equals its geometric multiplicity (the number of linearly independent eigenvectors associated with that eigenvalue).\n\n\nSubstituting the spectral decomposition (Equation 6) into the linear IVP (Equation 5) and left-multiplying by \\(L\\) gives, \\[\n\\frac{\\mathrm d}{\\mathrm d t} \\left ( L q \\right ) = L A q = L R \\Lambda L q = \\Lambda \\left ( L q \\right ).\n\\] By introducing the characteristic variable \\(w = L q\\), we can rewrite the above equation as, \\[\n\\dot w = \\Lambda w,\n\\] or equivalently, \\[\n\\dot w _ i = \\lambda _ i w _ i, \\quad i = 1, \\ldots, n.\n\\]\nIn other words, the original system of \\(n\\) coupled ordinary differential equations has been decoupled into \\(n\\) independent scalar ordinary differential equations, each of which can be solved separately.\nThis motivates the study of the scalar IVP, \\[\n\\dot q = \\lambda q,\n\\tag{7}\\] already encountered in the context of the radioactive decay example. A small modification however is that \\(\\lambda\\) is now allowed to be a complex number, since the eigenvalues of a real matrix can be complex.\nThe solution of this initial value problem is known, \\[\nq \\left ( t \\right ) = \\exp \\left ( \\lambda t \\right ) q _ 0,\n\\] which has the remarkable property, \\[\nq \\left ( t + \\tau \\right ) = \\exp \\left ( \\lambda \\tau \\right ) q \\left ( t \\right ).\n\\tag{8}\\] This will be used in the following section.\n\n\n2.2.2 Basic time integration schemes\nIn order to approximate the solution of an IVP numerically, we discretize the time domain into a series of time steps. Let \\(t _ 0\\) be the initial time and \\(\\tau\\) be the time step size (assumed constant for simplicity, but can be variable in general). We define a sequence of discrete time points, \\[\nt _ n = n \\tau, \\quad n \\in \\mathbb N.\n\\] This is an arithmetic sequence where each time point is obtained by adding the time step size \\(\\tau\\) to the previous time point, \\[\nt _ {n + 1} = t _ n + \\tau.\n\\]\nThe underlying idea is to approximate the solution \\(q \\left ( t \\right )\\) at these discrete time points, denoted as \\(q _ n \\approx q \\left ( t _ n \\right )\\). Of course. This sequence is initialized using the initial condition, \\(q _ 0\\) (Equation 2). In fact, the property of the exact solution of the toy problem (Equation 8) can be written for \\(t = t _ n\\), \\[\nq \\left ( t _ {n + 1} \\right ) = \\exp \\left ( \\lambda \\tau \\right ) q \\left ( t _ n \\right ),\n\\] which shows that the exact solution sampled at constant rate \\(\\tau\\) forms a geometric sequence with common ratio, \\[\n\\sigma \\left ( z \\right ) \\equiv \\exp \\left ( z \\right ).\n\\]\nThe goal of a numerical method for IVPs is to produce a recurrence relation, akin to Equation 8, but for arbitrary models \\(f\\) (i.e. not just the toy model). The starting point for this is the integration of the IVP (Equation 1) over a single time step \\(\\left [ t _ n, t _ {n + 1} \\right ]\\), \\[\n\\int _ {t _ n} ^ {t _ {n + 1}} \\dot q \\left ( t \\right ) \\mathrm d t = \\int _ {t _ n} ^ {t _ {n + 1}} f \\left ( t, q \\left ( t \\right ) \\right ) \\mathrm d t,\n\\] which yields the exact recurrence relation, \\[\nq \\left ( t _ {n + 1} \\right ) = q \\left ( t _ n \\right ) + \\int _ {t _ n} ^ {t _ {n + 1}} f \\left ( t, q \\left ( t \\right ) \\right ) \\mathrm d t.\n\\]\nThis relation is of little practical use, because the integral depends on the unknown solution \\(q \\left ( t \\right )\\) for \\(t \\in \\left [ t _ n, t _ {n + 1} \\right ]\\). The idea is therefore to approximate the integral using some quadrature rule.\n\n\n\n, and the goal is to devise a recurrence relation that relates the \\(n + 1\\)th term of the sequence (\\(\\underline{q _ n}\\)) to some combination of a finite number of previous terms (\\(\\underline{q _ n}\\), \\(\\underline{q _ {n - 1}}\\), …, \\(\\underline{q _ {n + 1 - k}}\\)).\nIn the context of IVPs, the number of previous terms used to compute the next term is referred to as the number of steps. It is traditional to distinguish between:\n\nSingle-step methods (\\(k = 1\\)): these methods compute the next value \\(\\underline{q _ {n + 1}}\\) using only the current value \\(\\underline{q _ n}\\). Examples include the Euler method and Runge-Kutta methods.\nMulti-step methods (\\(k &gt; 1\\)): these methods compute the next value \\(\\underline{q _ {n + 1}}\\) using multiple previous values, such as \\(\\underline{q _ n}\\), \\(\\underline{q _ {n - 1}}\\), etc. Examples include Adams-Bashforth and Adams-Moulton methods.\n\n\n\n\n\n\n\nNoteFibonacci sequence\n\n\n\nA famous example of a linear multi-step (\\(k = 2\\)) sequence with constant coefficients is the Fibonacci sequence, defined by the recurrence relation: \\[\nF _ {n + 1} = F _ n + F _ {n - 1},\n\\] and the initial conditions, \\[\nF _ 0 = 0 \\quad \\mathrm{and} \\quad F _ 1 = 1.\n\\]"
+  },
+  {
+    "objectID": "chapters/chapter2.html#euler-methods",
+    "href": "chapters/chapter2.html#euler-methods",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.2 Euler Methods",
+    "text": "2.2 Euler Methods"
+  },
+  {
+    "objectID": "chapters/chapter2.html#runge-kutta-methods",
+    "href": "chapters/chapter2.html#runge-kutta-methods",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.3 Runge-Kutta Methods",
+    "text": "2.3 Runge-Kutta Methods"
+  },
+  {
+    "objectID": "chapters/chapter2.html#multi-step-methods",
+    "href": "chapters/chapter2.html#multi-step-methods",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.4 Multi-step Methods",
+    "text": "2.4 Multi-step Methods"
+  },
+  {
+    "objectID": "chapters/chapter2.html#stability-analysis",
+    "href": "chapters/chapter2.html#stability-analysis",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "2.5 Stability Analysis",
+    "text": "2.5 Stability Analysis"
+  },
+  {
+    "objectID": "chapters/chapter2.html#footnotes",
+    "href": "chapters/chapter2.html#footnotes",
+    "title": "Chapter 2: Initial Value Problems",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSpace of all functions once continuously differentiable on \\(I\\).↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
+    "section": "",
+    "text": "This course provides comprehensive coverage of computational methods for solving heat transfer, fluid dynamics, and energy conversion problems. Students will learn to implement and apply numerical techniques for engineering analysis and design."
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
+    "section": "",
+    "text": "This course provides comprehensive coverage of computational methods for solving heat transfer, fluid dynamics, and energy conversion problems. Students will learn to implement and apply numerical techniques for engineering analysis and design."
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
+    "section": "Course Information",
+    "text": "Course Information\n\nInstructor: Vincent Le Chenadec\nInstitution: ESIEE Paris, Gustave Eiffel University\nPrerequisites: Ordinary Differential Equations, Partial Differential Equations, Fluid Mechanics, Heat Transfer"
+  },
+  {
+    "objectID": "index.html#topics-covered",
+    "href": "index.html#topics-covered",
+    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
+    "section": "Topics Covered",
+    "text": "Topics Covered\n\nNumerical methods for differential equations\nComputational fluid dynamics fundamentals\nHeat transfer simulation techniques\nEnergy system modeling\nHigh-performance computing for engineering applications"
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Numerical Methods for Energy, Thermal, and Fluid Engineering",
+    "section": "Getting Started",
+    "text": "Getting Started\nNavigate through the course materials using the menu above. All lecture notes, assignments, and resources are available through this website."
+  },
+  {
+    "objectID": "chapters/chapter3.html",
+    "href": "chapters/chapter3.html",
+    "title": "Chapter 3: Boundary Value Problems",
+    "section": "",
+    "text": "This chapter addresses numerical solution techniques for boundary value problems in ordinary differential equations."
+  },
+  {
+    "objectID": "chapters/chapter3.html#overview",
+    "href": "chapters/chapter3.html#overview",
+    "title": "Chapter 3: Boundary Value Problems",
+    "section": "",
+    "text": "This chapter addresses numerical solution techniques for boundary value problems in ordinary differential equations."
+  },
+  {
+    "objectID": "chapters/chapter3.html#learning-objectives",
+    "href": "chapters/chapter3.html#learning-objectives",
+    "title": "Chapter 3: Boundary Value Problems",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nFormulate boundary value problems\nApply shooting methods\nImplement finite difference methods\nUnderstand finite element basics"
+  },
+  {
+    "objectID": "chapters/chapter3.html#topics",
+    "href": "chapters/chapter3.html#topics",
+    "title": "Chapter 3: Boundary Value Problems",
+    "section": "Topics",
+    "text": "Topics\n\n3.1 Introduction to BVPs\n\n\n3.2 Shooting Methods\n\n\n3.3 Finite Difference Methods\n\n\n3.4 Collocation Methods\n\n\n3.5 Introduction to Finite Elements"
+  },
+  {
+    "objectID": "chapters/chapter5.html",
+    "href": "chapters/chapter5.html",
+    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
+    "section": "",
+    "text": "This chapter covers methods for solving systems of linear and nonlinear algebraic equations arising from discretized PDEs."
+  },
+  {
+    "objectID": "chapters/chapter5.html#overview",
+    "href": "chapters/chapter5.html#overview",
+    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
+    "section": "",
+    "text": "This chapter covers methods for solving systems of linear and nonlinear algebraic equations arising from discretized PDEs."
+  },
+  {
+    "objectID": "chapters/chapter5.html#learning-objectives",
+    "href": "chapters/chapter5.html#learning-objectives",
+    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nImplement direct solution methods\nApply iterative solution techniques\nUnderstand preconditioning strategies\nSolve nonlinear systems"
+  },
+  {
+    "objectID": "chapters/chapter5.html#topics",
+    "href": "chapters/chapter5.html#topics",
+    "title": "Chapter 5: Numerical Solution of Algebraic Systems",
+    "section": "Topics",
+    "text": "Topics\n\n5.1 Direct Methods (Gaussian Elimination, LU Decomposition)\n\n\n5.2 Iterative Methods (Jacobi, Gauss-Seidel, SOR)\n\n\n5.3 Krylov Subspace Methods\n\n\n5.4 Preconditioning Techniques\n\n\n5.5 Nonlinear Systems (Newton-Raphson)"
+  },
+  {
+    "objectID": "problem-sets/ps2.html",
+    "href": "problem-sets/ps2.html",
+    "title": "Problem Set 2",
+    "section": "",
+    "text": "The logistic equation models the growth of a population with intrinsic growth rate \\(\\alpha &gt; 0\\) and carrying capacity \\(\\kappa &gt; 0\\) (the limiting population as \\(t \\to \\infty\\)): \\[\n\\left \\{\n\\begin{aligned}\n\\dot{y}(t) & = \\alpha y(t)\\left(1 - \\frac{y(t)}{\\kappa}\\right), \\quad t &gt; 0, \\\\\ny(0) & = y_0.\n\\end{aligned}\n\\right.\n\\]\n\nShow that the solution of this initial value problem is \\[\n\\forall t &gt; 0, \\quad\ny(t) = \\frac{\\kappa}{1 + \\frac{\\kappa - y_0}{y_0}\\exp(-\\alpha t)}.\n\\]\n\nFor the remainder of the exercise, take \\(\\alpha = 1\\), \\(\\kappa = 2\\), and \\(y_0 = 1\\).\n\nApply the Forward Euler method with time step \\(\\tau = 0.1\\). Compute the numerical approximation up to \\(t = 0.3\\).\nCompare the numerical approximation with the exact solution. Reproduce and complete the table below.\n\n\nExpected format for reporting the results of the logistic equation exercise.\n\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(t_n\\)\n\\(y(t_n)\\) (exact)\n\\(y_n\\) (numerical)\n\\(\\lvert y_n - y(t_n) \\rvert\\)\n\n\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0.1\\)\n\n\n\n\n\n\\(2\\)\n\\(0.2\\)\n\n\n\n\n\n\\(3\\)\n\\(0.3\\)"
+  },
+  {
+    "objectID": "problem-sets/ps2.html#p2.1-logistic-equation",
+    "href": "problem-sets/ps2.html#p2.1-logistic-equation",
+    "title": "Problem Set 2",
+    "section": "",
+    "text": "The logistic equation models the growth of a population with intrinsic growth rate \\(\\alpha &gt; 0\\) and carrying capacity \\(\\kappa &gt; 0\\) (the limiting population as \\(t \\to \\infty\\)): \\[\n\\left \\{\n\\begin{aligned}\n\\dot{y}(t) & = \\alpha y(t)\\left(1 - \\frac{y(t)}{\\kappa}\\right), \\quad t &gt; 0, \\\\\ny(0) & = y_0.\n\\end{aligned}\n\\right.\n\\]\n\nShow that the solution of this initial value problem is \\[\n\\forall t &gt; 0, \\quad\ny(t) = \\frac{\\kappa}{1 + \\frac{\\kappa - y_0}{y_0}\\exp(-\\alpha t)}.\n\\]\n\nFor the remainder of the exercise, take \\(\\alpha = 1\\), \\(\\kappa = 2\\), and \\(y_0 = 1\\).\n\nApply the Forward Euler method with time step \\(\\tau = 0.1\\). Compute the numerical approximation up to \\(t = 0.3\\).\nCompare the numerical approximation with the exact solution. Reproduce and complete the table below.\n\n\nExpected format for reporting the results of the logistic equation exercise.\n\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(t_n\\)\n\\(y(t_n)\\) (exact)\n\\(y_n\\) (numerical)\n\\(\\lvert y_n - y(t_n) \\rvert\\)\n\n\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0.1\\)\n\n\n\n\n\n\\(2\\)\n\\(0.2\\)\n\n\n\n\n\n\\(3\\)\n\\(0.3\\)"
+  },
+  {
+    "objectID": "problem-sets/ps2.html#p2.2-blasius-boundary-layer-problem",
+    "href": "problem-sets/ps2.html#p2.2-blasius-boundary-layer-problem",
+    "title": "Problem Set 2",
+    "section": "P2.2 Blasius Boundary Layer Problem",
+    "text": "P2.2 Blasius Boundary Layer Problem\nThe Blasius equation arises in boundary layer theory. It describes the steady, two-dimensional, incompressible laminar flow over a semi-infinite flat plate aligned with a uniform free stream.\nAfter similarity reduction of the Navier–Stokes equations, the problem reduces to the nonlinear boundary value problem: \\[\nu'''(x) + u(x)\\,u''(x) = 0,\n\\] subject to the boundary conditions \\[\n\\left\\{\n\\begin{aligned}\nu(0) &= 0, \\\\\nu'(0) &= 0, \\\\\nu'(\\infty) &= 1.\n\\end{aligned}\n\\right.\n\\]\n\nWhat is the order of this ODE? Rewrite it as a system of first-order ODEs.\nShow that the Blasius equation and the boundary conditions at \\(x=0\\) are invariant under the scaling transformation (\\(c \\neq 0\\)) \\[\n\\begin{aligned}\n\\overline{u} &= c\\,u, \\\\\n\\overline{x} &= \\frac{x}{c}.\n\\end{aligned}\n\\]\n\nUnder this transformation, \\(\\overline{u}\\) satisfies the same differential equation as \\(u\\), but the condition at infinity is replaced by \\[\n\\overline{u}''(0) = 1.\n\\]\nDefine \\[\n\\alpha = \\overline{u}'(\\infty).\n\\]\n\nShow that choosing the scaling constant \\[\nc = \\sqrt{\\alpha}\n\\] leads to the normalization condition \\[\nu'(\\infty) = 1.\n\\]\nPropose a numerical method to solve this boundary value problem. (Indicate clearly how you would treat the condition at infinity.)"
+  },
+  {
+    "objectID": "problem-sets/ps2.html#p2.3-planar-three-body-problem",
+    "href": "problem-sets/ps2.html#p2.3-planar-three-body-problem",
+    "title": "Problem Set 2",
+    "section": "P2.3 Planar Three-Body Problem",
+    "text": "P2.3 Planar Three-Body Problem\nWe consider three point masses \\(m _ i &gt; 0\\) moving in the plane, with positions \\(\\underline{r _ i} \\left ( t \\right ) \\in \\mathbb R ^ 2\\) and velocities \\(\\underline{v _ i} \\left ( t \\right ) \\in \\mathbb R ^ 2\\), for \\(i = 1\\), \\(2\\) and \\(3\\). The only force is Newtonian gravity.\nThis is a classical problem in celestial mechanics, and it is known that no closed-form solution exists for the general case. We will study a particular periodic solution, known as the figure-eight solution, which was discovered numerically by Moore in 1993 and later proved to exist by Chenciner and Montgomery in 2000.\n\n\n\n\nFigure-eight orbit of the three-body problem (source: Wikipedia).\n\n\n\n\nModeling\n\nStarting from Newton’s law \\(m _ i \\underline{\\ddot r _ i} = \\underline{F _ i}\\) and the gravitational interaction between pairs, show that \\[\n\\dot r_i = v_i,\n\\qquad\n\\dot v_i = \\sum_{j\\neq i} G m _ j \\frac{\\underline{r _ j} - \\underline{r _ i}}{\\left \\Vert \\underline{r _ j} - \\underline{r _ i} \\right \\Vert ^ 3},\n\\qquad i = 1,2,3,\n\\] where \\(G\\) is the gravitational constant.\nWrite the system as a first-order ODE \\(\\dot q \\left ( t \\right ) = f \\left ( t, q \\left ( t \\right ) \\right )\\) in \\(\\mathbb R ^ {12}\\) by defining \\[\ny = \\left ( \\underline{r _ 1}, \\underline{r _ 2}, \\underline{r _ 3}, \\underline{v _ 1}, \\underline{v _ 2}, \\underline{v _ 3} \\right ).\n\\] Give the explicit expression of \\(f \\left ( t, q \\left ( t \\right ) \\right )\\).\nShow formally that the following quantities are invariants of the exact dynamics:\n\nTotal linear momentum \\[\n\\underline P  = \\sum _ i m_i \\underline{v _ i}\n\\]\nCenter of mass position \\[\n\\underline R = \\frac{1}{M} \\sum _ i m _ i \\underline{r _ i} \\quad \\mathrm{with} \\quad M = \\sum _ i m _ i\n\\]\nTotal energy \\[\nE = \\sum _ i \\frac 1 2 m _ i \\left \\Vert \\underline{v _ i} \\right \\Vert ^ 2 - \\sum _ {i &lt; j} \\frac{G m _ i m _ j}{\\left \\Vert \\underline{r _ i} - \\underline{r _ j} \\right \\Vert}\n\\]\n\n\n\n\nNumerical experiment (dimensionless units)\nTo avoid very large/small physical constants, use the dimensionless choice \\(G = 1\\) and take equal masses (\\(m _ 1 = m _ 2 = m _ 3 = 1\\)). The initial condition (a famous periodic solution of the three-body problem) in the plane: \\[\n\\begin{aligned}\nr _ 1(0) & = ( \\;\\;0.97000436,\\; -0.24308753), \\\\\nr _ 2(0) & = (-0.97000436,\\; \\;\\;0.24308753), \\\\\nr _ 3(0) & = (0,\\;0),\n\\end{aligned}\n\\] and \\[\n\\begin{aligned}\nv _ 1(0) &= ( \\;\\;0.466203685,\\; 0.432365730), \\\\\nv _ 2(0) &= ( \\;\\;0.466203685,\\; 0.432365730), \\\\\nv _ 3(0) &= (-0.93240737,\\; -0.86473146).\n\\end{aligned}\n\\]\n\nVerify from the initial data that:\n\nThe center of mass is at the origin and remains there (at least at \\(t = 0\\)).\nThe total linear momentum is zero at \\(t = 0\\).\n\nIntegrate the system over \\(t \\in \\left [ 0, T \\right ]\\) with \\(T = 10\\) using a constant time step \\(\\tau\\) (try \\(\\tau = 10 ^ {-2}\\) and \\(\\tau = 5 \\times 10 ^ {-3}\\)). Do this with:\n\nForward Euler\nRunge-Kutta 2\nMidpoint rule\n\nFor each method and each (h), compute and plot versus time:\n\nThe energy error (\\(E \\left ( t \\right ) - E \\left ( 0 \\right )\\))\nThe momentum norm (\\(\\left \\Vert \\underline P \\left ( t \\right ) \\right \\Vert\\))\nThe center of mass drift (\\(\\left \\Vert \\underline R \\left ( t \\right ) \\right \\Vert\\))\n\nPlot the planar trajectories of the three bodies and comment:\n\nDoes the motion remain bounded?\nDo you observe a qualitative difference between methods?\nWhich method best preserves invariants for a given step size?"
+  },
+  {
+    "objectID": "problem-sets/ps3.html",
+    "href": "problem-sets/ps3.html",
+    "title": "Problem Set 3",
+    "section": "",
+    "text": "Let a first derivative be approximated by the stencil \\[\nf' \\left ( x _ i \\right ) \\simeq \\frac{\\alpha f _ {i - 2} + \\beta f _ {i - 1} + \\gamma f _ i + \\delta f _ {i + 1} + \\epsilon f _ {i + 2}}{h}.\n\\]\n\nUse Taylor expansions to determine five necessary conditions the coefficients should satisfy for the formulation to be fourth-order accurate.\nFind the coefficients \\(\\alpha\\), \\(\\beta\\), \\(\\gamma\\), \\(\\delta\\) and \\(\\epsilon\\) that satisfy these constraints.\nFind the leading truncation error term of the resulting formula.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nThe first four equations read \\[\n\\left \\{ \\begin{aligned}\n\\alpha + \\beta + \\gamma + \\delta + \\epsilon & = 0, \\\\\n-2 \\alpha - \\beta + \\delta + 2 \\epsilon & = 1, \\\\\n4 \\alpha + \\beta + \\delta + 4 \\epsilon & = 0, \\\\\n-8 \\alpha - \\beta + \\delta + 8 \\epsilon & = 0, \\\\\n16 \\alpha + \\beta + \\delta + 16 \\epsilon & = 0,\n\\end{aligned} \\right .\n\\]\nThe solution to the system of equations is, \\[\n\\alpha = \\frac{1}{12}, \\quad \\beta = -\\frac{2}{3}, \\quad \\gamma = 0, \\quad \\delta = \\frac{2}{3}, \\quad \\epsilon = -\\frac{1}{12}.\n\\]\nThe formula and truncation errors thus read, \\[\nf' \\left ( x _ i \\right )  = \\frac{f _ {i - 2} -  8 f _ {i - 1} + 8 f _ {i + 1} - f _ {i + 2}}{12 h} + \\frac{h ^ 4}{30} f ^ {\\left ( 5 \\right )} \\left ( x _ i \\right ) + \\mathcal{O} \\left ( h ^ 6 \\right ).\n\\]"
+  },
+  {
+    "objectID": "problem-sets/ps3.html#p3.1-high-order-finite-difference-formula-for-the-first-derivative",
+    "href": "problem-sets/ps3.html#p3.1-high-order-finite-difference-formula-for-the-first-derivative",
+    "title": "Problem Set 3",
+    "section": "",
+    "text": "Let a first derivative be approximated by the stencil \\[\nf' \\left ( x _ i \\right ) \\simeq \\frac{\\alpha f _ {i - 2} + \\beta f _ {i - 1} + \\gamma f _ i + \\delta f _ {i + 1} + \\epsilon f _ {i + 2}}{h}.\n\\]\n\nUse Taylor expansions to determine five necessary conditions the coefficients should satisfy for the formulation to be fourth-order accurate.\nFind the coefficients \\(\\alpha\\), \\(\\beta\\), \\(\\gamma\\), \\(\\delta\\) and \\(\\epsilon\\) that satisfy these constraints.\nFind the leading truncation error term of the resulting formula.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nThe first four equations read \\[\n\\left \\{ \\begin{aligned}\n\\alpha + \\beta + \\gamma + \\delta + \\epsilon & = 0, \\\\\n-2 \\alpha - \\beta + \\delta + 2 \\epsilon & = 1, \\\\\n4 \\alpha + \\beta + \\delta + 4 \\epsilon & = 0, \\\\\n-8 \\alpha - \\beta + \\delta + 8 \\epsilon & = 0, \\\\\n16 \\alpha + \\beta + \\delta + 16 \\epsilon & = 0,\n\\end{aligned} \\right .\n\\]\nThe solution to the system of equations is, \\[\n\\alpha = \\frac{1}{12}, \\quad \\beta = -\\frac{2}{3}, \\quad \\gamma = 0, \\quad \\delta = \\frac{2}{3}, \\quad \\epsilon = -\\frac{1}{12}.\n\\]\nThe formula and truncation errors thus read, \\[\nf' \\left ( x _ i \\right )  = \\frac{f _ {i - 2} -  8 f _ {i - 1} + 8 f _ {i + 1} - f _ {i + 2}}{12 h} + \\frac{h ^ 4}{30} f ^ {\\left ( 5 \\right )} \\left ( x _ i \\right ) + \\mathcal{O} \\left ( h ^ 6 \\right ).\n\\]"
+  },
+  {
+    "objectID": "problem-sets/ps3.html#p3.2-reverse-engineering-a-finite-difference-formula",
+    "href": "problem-sets/ps3.html#p3.2-reverse-engineering-a-finite-difference-formula",
+    "title": "Problem Set 3",
+    "section": "P3.2 Reverse engineering a finite difference formula",
+    "text": "P3.2 Reverse engineering a finite difference formula\n\nWhat derivative is approximated by the formula below? \\[\n\\frac{-f _ {i - 2} + 16 f _ {i - 1} - 30 f _ i + 16 f _ {i + 1} - f _ {i + 2}}{12 h ^ 2}.\n\\]\nWhat is the order of accuracy of the formula?\nVerify that the scheme differentiates exactly all polynomials up to degree \\(4\\)."
   }
 ]
