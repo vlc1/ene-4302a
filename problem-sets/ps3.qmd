@@ -1,0 +1,49 @@
+---
+title: "Problem Set 3"
+---
+
+## P3.1 High-order finite difference formula for the first derivative
+
+Let a first derivative be approximated by the stencil
+$$
+f' \left ( x _ i \right ) \simeq \frac{\alpha f _ {i - 2} + \beta f _ {i - 1} + \gamma f _ i + \delta f _ {i + 1} + \epsilon f _ {i + 2}}{h}.
+$$
+
+1. Use Taylor expansions to determine five necessary conditions the coefficients should satisfy for the formulation to be fourth-order accurate.
+2. Find the coefficients $\alpha$, $\beta$, $\gamma$, $\delta$ and $\epsilon$ that satisfy these constraints.
+3. Find the leading truncation error term of the resulting formula.
+
+::: {.callout-note collapse="true" title="Solution"}
+
+The first four equations read
+$$
+\left \{ \begin{aligned}
+\alpha + \beta + \gamma + \delta + \epsilon & = 0, \\
+-2 \alpha - \beta + \delta + 2 \epsilon & = 1, \\
+4 \alpha + \beta + \delta + 4 \epsilon & = 0, \\
+-8 \alpha - \beta + \delta + 8 \epsilon & = 0, \\
+16 \alpha + \beta + \delta + 16 \epsilon & = 0,
+\end{aligned} \right .
+$$
+
+The solution to the system of equations is,
+$$
+\alpha = \frac{1}{12}, \quad \beta = -\frac{2}{3}, \quad \gamma = 0, \quad \delta = \frac{2}{3}, \quad \epsilon = -\frac{1}{12}.
+$$
+
+The formula and truncation errors thus read,
+$$
+f' \left ( x _ i \right )  = \frac{f _ {i - 2} -  8 f _ {i - 1} + 8 f _ {i + 1} - f _ {i + 2}}{12 h} + \frac{h ^ 4}{30} f ^ {\left ( 5 \right )} \left ( x _ i \right ) + \mathcal{O} \left ( h ^ 6 \right ).
+$$
+
+:::
+
+## P3.2 Reverse engineering a finite difference formula
+
+1. What derivative is approximated by the formula below?
+$$
+\frac{-f _ {i - 2} + 16 f _ {i - 1} - 30 f _ i + 16 f _ {i + 1} - f _ {i + 2}}{12 h ^ 2}.
+$$
+2. What is the order of accuracy of the formula?
+3. Verify that the scheme differentiates exactly all polynomials up to degree $4$.
+
