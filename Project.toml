@@ -1,10 +1,11 @@
-name = "ENE4302A"
-
 [deps]
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
-InitialValueProblems = {git = "https://github.com/vlc1/InitialValueProblems.jl"}
+InitialValueProblems = "b92ae0ef-2d67-44cc-8a56-2d81bbaef28c"
 LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+
+[sources]
+InitialValueProblems = {url = "https://github.com/vlc1/InitialValueProblems.jl"}
 
 [compat]
 julia = "1.10"
