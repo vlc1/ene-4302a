@@ -242,7 +242,7 @@ This relation is of little practical use, because the integral depends on the un
 #| warning: false
 
 using Plots
-using Ene4302a
+using InitialValueProblems
 
 ti = 0.
 tf = 2.
@@ -251,8 +251,8 @@ lw = 2
 lc = :red
 xlim = (ti, tf)
 
-top = plot(solution, label="q(t)"; xlim, lw, lc)
-bottom = plot(model, label="q'(t) = f(t,q(t))"; xlim, lw, lc)
+#top = plot(solution, label="q(t)"; xlim, lw, lc)
+#bottom = plot(model, label="q'(t) = f(t,q(t))"; xlim, lw, lc)
 
 αs = [0.25, 0.5, 0.75]
 
@@ -269,17 +269,17 @@ for i in Base.OneTo(n)
     t = s + τ
 
     xs[1:m] .= range(s, t; length=m)
-    ys[1:m] .= model.(xs[1:m])
+#    ys[1:m] .= model.(xs[1:m])
 
     j = m + 1; xs[j] = t; ys[j] = iso
     j = m + 2; xs[j] = s; ys[j] = iso
-    j = m + 3; xs[j] = s; ys[j] = model(xs[j])
+#    j = m + 3; xs[j] = s; ys[j] = model(xs[j])
 
     α = αs[i % length(αs) + 1]
-    plot!(bottom, Shape(xs, ys), fill=(iso, α, :blue), label=false)
+#    plot!(bottom, Shape(xs, ys), fill=(iso, α, :blue), label=false)
 end
 
-plot(top, bottom, layout=(2, 1))
+#plot(top, bottom, layout=(2, 1))
 
 ```
 :::
